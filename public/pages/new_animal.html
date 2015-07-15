@@ -1,0 +1,28 @@
+<section id="new_animal">
+	<section id="new_animal_title"> New </section>
+	<section id="new_animal_pic"> 
+			<input type='file' id="imgInp" multiple accept='image/*' style="display:none">
+			<img id="profileImage" ng-src="#" alt="profileImage" class="circlephoto" 
+			style="cursor:pointer">
+	</section>
+	<section id="new_animal_details"> Details </section>
+	<section id="new_animal_form"> 
+		<form ng-submit="addNewAnimal()">
+			<p>
+				<label> Name:  </label>
+				<input type="text" name="name" ng-model="animal.animalName">
+			</p>
+			<p>
+				<label> Age: </label>
+				<input type="number" name="age" ng-model="animal.animalAge"> 
+			</p>
+			<p>
+				<label> Weight: </label>
+				<input type="number" name="weight" ng-model="animal.animalWeight"> 
+			</p>
+
+			<input id="new_animal_done" type="submit" value="Done">
+		</form>
+	</section>
+</section>
+

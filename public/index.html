@@ -1,0 +1,84 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="css/style.css">
+      <script src="js/lib/Jquery/jquery-1.11.3.min.js"> </script>
+      <script src="js/lib/angular/angular.min.js"> </script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js">   </script>    
+      <script src="js/lib/angular/angular-cookies.js"> </script> 
+      <script src="js/furryfunctions.js"> </script>
+      <script src="js/furrycare.js"> </script>
+     <!-- <link  href="css/scrollyeah.css" rel="stylesheet" />
+      <script src="js/scrollyeah.js"></script> -->
+      <title> Furry Care </title>
+    </head>
+
+    <body ng-app="furrycareApp" ng-controller="userCtrl">
+      <section ng-hide="!isUserLogedIn()">
+        <div id="wrapper">
+          <header>
+            <section id="title_section"> <h1> FURRYCARE </h1> </section>
+              <nav id="main_nav">
+                <ul>
+                  <li ng-class="{'active': isThisPageActive('animal')}" data-ng-click="selectedPage('animal')"> 
+                      <img src="images/animals_icon.png"> 
+                  </li>
+                  <li ng-class="{'active': isThisPageActive('notification')}" data-ng-click="selectedPage('notification')"> 
+                      <img src="images/alerts_icon.png"> 
+                  </li>
+                  <div class="clear"> </div>
+                </ul>
+              </nav>
+          </header>
+          <main>
+            <section ng-hide="isThisPageActive('notification')">
+              <nav id="animal_nav">
+                <ul> <!-- class="scrollyeah"> -->
+                  <li ng-repeat="animal in user.animals" data-ng-click="checkSelectedAnimal(animal._id)" 
+                      ng-class="{'active' : isThisAnimalActive(animal._id) }"> <!-- ,'item':true -->
+                      <img ng-src="images/{{animal.animalPic}}">
+                  </li>                  
+                  <li ng-hide="!newAnimalClicked" ng-class="{'active' : newAnimalClicked}"> 
+                      <section id="def_circle"> </section>
+                  </li>
+                </ul> 
+              </nav>
+              <section id="add_animal">
+                <img src="images/add.png" ng-click="moveToAddNewAnimalPage()">  
+              </section>
+              <div class="clear"> </div>
+            </section>
+
+            <section ng-view>
+            <!-- changing data goes here -->
+            </section>
+
+          </main>
+        </div>
+      </section>
+
+      <!-- login page -->
+      <section id="login_page" ng-hide="isUserLogedIn()">
+        <div id="wrapper" class="login_body">
+          <header>
+          </header>
+          <main>
+            <section id="loginIcon"><img src="images/loginIcon.png" ></section>
+            <form ng-submit="login()" id="loginForm">
+              <p>
+                <input type="mail" name="mail" ng-model="user.email" placeholder="Email" class="textInput">
+              </p>
+              <p>
+                <input type="password" name="pass" ng-model="user.pass" placeholder="Password" class="textInput">
+              </p>
+              <p>
+                <input id="login_btn" type="image" src="images/login_btn.png" alt="submit_login">
+              </p>
+            </form>
+          </main>
+        </div>
+      </section> 
+    </body>
+</html>
