@@ -280,13 +280,21 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
                 console.log("no need to update in db.");
     };
     /* add animal button was clicked */
-    $scope.addNewAnimal = function() {
+    //$scope.addNewAnimal = function() {
+
+    $scope.addNewAnimal = function(){
         $scope.$parent.newAnimalClicked = false;
         console.log("name: "+ $scope.animal.animalName);
         console.log("age: "+ $scope.animal.animalAge);
         console.log("weight: "+ $scope.animal.animalWeight);
-        $scope.animal.animalPic = "animal1.png";
+        $scope.animal.animalPic = "images/animal1.png";
         console.log("pic: "+ $scope.animal.animalPic);
+
+        if( profileImageUrl != null)
+            $scope.animal.animalPic = profileImageUrl;
+        
+        console.log("pic: "+ $scope.animal.animalPic); // pic url;
+
 
         $http.get('http://localhost:3000/setNewAnimal?animalName='+$scope.animal.animalName+'&animalAge='+$scope.animal.animalAge
             +'&animalWeight='+$scope.animal.animalWeight+'&animalPic='+$scope.animal.animalPic)
@@ -485,6 +493,84 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
                 $scope.openList(typeComplexDetail);
         });
     };
+
+
+
+    var uploadAnimalPictureBool = 1;
+    var profileImageUrl = null;
+
+
+    $("#imgInp").change(function(){
+        readURL(this);
+    });
+
+    $("#profileImage").click(function () {
+        $("#imgInp").trigger('click');
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#profileImage').attr('src', e.target.result);
+                console.log("temp url client:"+e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $scope.uploadFile = function(files) {
+        uploadAnimalPictureBool = 0; // block the user from submit
+        var fd = new FormData();
+        //Take the first selected file
+        fd.append("file", files[0]);
+        $http.post('http://localhost:3000/uploadImg', fd, {
+            withCredentials: true,
+            headers: {'Content-Type': undefined},
+            transformRequest: angular.identity
+        }).success(function (data) {
+            console.log("File Upload Succcess!!");
+            uploadAnimalPictureBool = 1; // return the submit option
+            console.log("this is image url:" + data);
+            // add an extra to the url
+            // this extra made the image size 50*50 and circle it
+            ///c_scale,h_50,r_30,w_50
+            var tempImageUrl = data;
+            profileImageUrl = tempImageUrl.slice(0,48) + "/c_scale,h_50,r_30,w_50" + tempImageUrl.slice(48 + Math.abs(0));
+            // change the image type to png (remove the image white background that create from circle the image)
+            var urlLength = profileImageUrl.length;
+            tempImageUrl = profileImageUrl;
+            console.log("pro[]: "+profileImageUrl[urlLength-4]);
+            if(profileImageUrl[urlLength-4]=="."){
+                console.log("i am dot!");
+                profileImageUrl = tempImageUrl.slice(0,urlLength-4) + ".png";
+            } else if(profileImageUrl[urlLength-5]=="."){
+                profileImageUrl = tempImageUrl.slice(0,urlLength-5) + ".png";
+            }
+
+            console.log("fixed url:" +profileImageUrl);
+
+        })
+            .error(function (err) {
+                console.log("File Upload Error!!");
+            });
+    };
+
+    $scope.checkIfAddAnimalAvailable = function(){
+        // check if there is upload request - user cannot submit
+      if (uploadAnimalPictureBool){
+          // if uploading was finish you can submit the new animal
+          $scope.addNewAnimal();
+      }
+        else{
+          console.log("Please Wait for finish uploading the image");
+          // need to implement some alert?
+      }
+    };
+
+
+
+
 
 }]); 
 

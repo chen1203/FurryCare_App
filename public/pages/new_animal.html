@@ -1,13 +1,14 @@
 <section id="new_animal">
 	<section id="new_animal_title"> New </section>
 	<section id="new_animal_pic"> 
-			<input type='file' id="imgInp" multiple accept='image/*' style="display:none">
+			<input type='file' id="imgInp" multiple accept='image/*' 
+				   onchange="angular.element(this).scope().uploadFile(this.files)" style="display:none">
 			<img id="profileImage" ng-src="#" alt="profileImage" class="circlephoto" 
 			style="cursor:pointer">
 	</section>
 	<section id="new_animal_details"> Details </section>
 	<section id="new_animal_form"> 
-		<form ng-submit="addNewAnimal()">
+		<form ng-submit="checkIfAddAnimalAvailable()">
 			<p>
 				<label> Name:  </label>
 				<input type="text" name="name" ng-model="animal.animalName">
