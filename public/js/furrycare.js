@@ -446,7 +446,77 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
                 $scope.addCareClickedVar = false;
         }); 
     };
-    $scope.calcTimeLeftFor = function (date,expDate) {
+    $scope.vaccItemClicked = function(vacc) {
+        if (vacc.vaccItemClickedVar == true)
+            vacc.vaccItemClickedVar = false;
+        else 
+            vacc.vaccItemClickedVar = true;
+    }
+    $scope.foodItemClicked = function(food) {
+        if (food.foodItemClickedVar == true)
+            food.foodItemClickedVar = false;
+        else 
+            food.foodItemClickedVar = true;
+    }
+    $scope.careItemClicked = function(care) {
+        if (care.careItemClickedVar == true)
+            care.careItemClickedVar = false;
+        else 
+            care.careItemClickedVar = true;
+    }
+    $scope.openList = function(typeList) {
+        if (typeList == "vacc")
+            $scope.openVaccList("open");
+        else if (typeList == "food")
+            $scope.openFoodList("open");
+        else if(typeList == "care")
+            $scope.openCareList("open");
+    };
+    $scope.deleteItemComplexDetail = function(typeComplexDetail,itemId) {
+        var animalId = $scope.$parent.currAnimal._id; 
+        console.log("delete item clicked");
+        $http.get('http://localhost:3000/deleteItemComplexDetail?animalId='+animalId
+            +'&typeComplexDetail='+typeComplexDetail+'&itemId='+itemId)
+            .success(function (data){
+                $scope.$parent.user = data;
+                // update the current animal with the new list without the deleted item
+                $scope.$parent.checkSelectedAnimal(animalId);
+                // open back the list
+                $scope.openList(typeComplexDetail);
+        });
+    };
+
+}]); 
+
+furrycareApp.controller('notificationCtrl', function ($scope,$http) {
+
+    $scope.createNoti = function(notiType,notiName,notiReceivedDate,notiExpiredDate) {
+        console.log("create notification to :"+notiType);
+        console.log(notiName);
+        // push the notification to db
+        $http.get('http://localhost:3000/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
+            +'&notiType='+notiType+'&notiName='+notiName
+            +'&notiReceivedDate='+new Date(notiReceivedDate)+'&notiExpiredDate='+new Date(notiExpiredDate))
+            .success(function (data){
+                $scope.$parent.$parent.user = data;
+        });
+    };
+    $scope.createFoodNoti = function(notiName,notiReceivedDate,bagWeight,dailyUse) {
+        console.log("create notification to food.");
+        var daysleft = (bagWeight * 1000) / dailyUse;
+        var dateToExp = new Date();
+        dateToExp.setDate(dateToExp.getDate() + daysleft); 
+        console.log(dateToExp);
+        // push the notification to db
+        $http.get('http://localhost:3000/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
+            +'&notiType=food'+'&notiName='+notiName
+            +'&notiReceivedDate='+new Date(notiReceivedDate)+'&notiExpiredDate='+new Date(dateToExp))
+            .success(function (data){
+                $scope.$parent.$parent.user = data;
+        });
+    };
+    /* calculate time left for care or vacc */
+    $scope.calcTimeLeft = function (date,expDate) {
         var currentDate = new Date();
         var objDate = new Date(date);
         currentDate.setHours(0,0,0,0);
@@ -482,63 +552,67 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             return (exp.getDate() - currentDate.getDate())+" days";
         }
     };
-    $scope.calcTimeLeftForFood = function(food,date) {
+    $scope.calcTimeLeftForFood = function(food) {
         var daysleft = (food.foodBagWeight * 1000) / food.foodDailyUsage;  
-        var dateToExp = new Date(date);
+        var dateToExp = new Date(food.foodDate);
         dateToExp.setDate(dateToExp.getDate() + daysleft); 
-        return $scope.calcTimeLeftFor(date,dateToExp); 
+        return $scope.calcTimeLeft(food.foodDate,dateToExp); 
     };
-    $scope.vaccItemClicked = function(vacc) {
-        if (vacc.vaccItemClickedVar == true)
-            vacc.vaccItemClickedVar = false;
-        else 
-            vacc.vaccItemClickedVar = true;
-    }
-    $scope.foodItemClicked = function(food) {
-        if (food.foodItemClickedVar == true)
-            food.foodItemClickedVar = false;
-        else 
-            food.foodItemClickedVar = true;
-    }
-    $scope.careItemClicked = function(care) {
-        if (care.careItemClickedVar == true)
-            care.careItemClickedVar = false;
-        else 
-            care.careItemClickedVar = true;
-    }
-
-}]); 
-
-furrycareApp.controller('notificationCtrl', function ($scope,$http) {
-
-    $scope.createNoti = function(notiType,notiName,notiReceivedDate,notiExpiredDate) {
-        console.log("create notification to :"+notiType);
-        console.log(notiName);
-        // push the notification to db
-        $http.get('http://localhost:3000/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
-            +'&notiType='+notiType+'&notiName='+notiName
-            +'&notiReceivedDate='+new Date(notiReceivedDate)+'&notiExpiredDate='+new Date(notiExpiredDate))
-            .success(function (data){
-                $scope.$parent.$parent.user = data;
+    $scope.calcTimeForNoti = function(notiType,notiReceivedDate,notiExpiredDate) {
+        if (notiType == "food") {
+            return $scope.calcTimeLeftForFood(notiType,notiReceivedDate,notiExpiredDate);
+        } else // notiType is vacc or care
+            return $scope.calcTimeLeft(notiReceivedDate,notiExpiredDate);
+    };
+    $scope.findAnimalNameById = function(animalId) {
+        var nameFound = "";
+        angular.forEach($scope.$parent.user.animals, function(animal) {
+                if (animal._id == animalId) 
+                    nameFound = animal.animalName;
         });
+        return nameFound;
     };
-    $scope.createFoodNoti = function(notiName,notiReceivedDate,bagWeight,dailyUse) {
-        console.log("create notification to food.");
-        var daysleft = (bagWeight * 1000) / dailyUse;
-        var dateToExp = new Date();
-        dateToExp.setDate(dateToExp.getDate() + daysleft); 
-        console.log(dateToExp);
-        // push the notification to db
-        $http.get('http://localhost:3000/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
-            +'&notiType=food'+'&notiName='+notiName
-            +'&notiReceivedDate='+new Date(notiReceivedDate)+'&notiExpiredDate='+new Date(dateToExp))
-            .success(function (data){
-                $scope.$parent.$parent.user = data;
+    $scope.findAnimalImgById = function(animalId) {
+        var imgFound = ""; // default img ?
+        angular.forEach($scope.$parent.user.animals, function(animal) {
+                if (animal._id == animalId) {
+                    imgFound = animal.animalPic;
+                }
         });
+        return imgFound;
     };
-
+    $scope.deleteNoti = function(notiId) {
+        console.log("delete noti from app");
+        console.log("noti id: "+notiId);
+        $http.get('http://localhost:3000/deleteNoti?notiId='+notiId)
+            .success(function (data){
+                $scope.$parent.user = data;
+        }); 
+    };
+    $scope.closestDate = function(date,exp) {
+        var date = new Date(date);
+        var currentDate = new Date();
+        date.setHours(0,0,0,0);    
+        currentDate.setHours(0,0,0,0);
+        var diff1 = date.getTime() - currentDate.getTime();
+        if (diff1 > 0)
+            return date;
+        return new Date(exp);
+    }
+    $scope.vaccOrder = function(vacc) {
+        return $scope.closestDate(vacc.vaccDate,vacc.vaccExp);
+    };
+    $scope.careOrder = function(care) {
+        return $scope.closestDate(care.careDate,care.careExp);
+    };
+    $scope.foodOrder = function(food) {
+        var daysleft = (food.foodBagWeight * 1000) / food.foodDailyUsage;  
+        var dateToExp = new Date(food.foodDate);
+        dateToExp.setDate(dateToExp.getDate() + daysleft);
+        return $scope.closestDate(food.foodDate,dateToExp);
+    };
+    $scope.notiOrder = function(noti) {
+        return $scope.closestDate(noti.notiReceivedDate,noti.notiExpiredDate);
+    };
 });
-
-
-
 
