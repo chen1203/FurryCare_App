@@ -429,8 +429,8 @@ a{
 	#new_animal_pic input {
 	}
 	#profileImage {
-   	  	width: 129px;
-	  	height: 129px;
+   	  	width: 128px;
+	  	height: 128px;
 	  	display: block;
 	  	position: absolute;
 	  	top: 21px;
@@ -441,6 +441,10 @@ a{
 	  border-radius:99px;
 	  -moz-border-radius:99px;
 	  -webkit-border-radius:99px;
+	   -webkit-tap-highlight-color: rgba(0,0,0,0);
+	   border: 1px solid #221f1f;
+	   padding: 1px;
+
    }
 	#new_animal_details {
 		width: 564px;
@@ -468,7 +472,7 @@ a{
 	}
 	#new_animal_form {
 		width: 564px;
-		height: 435px;
+		height: 445px;
 	}
 	.form_row {
 		width: 564px;
