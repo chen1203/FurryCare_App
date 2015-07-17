@@ -58,11 +58,11 @@
 					    </section>
 					    <section class="sub_title_complex_details" ng-hide="addVaccState()">
 					    	<p> All </p>
-					    	<img src="images/add.png" ng-click="addVaccClicked()">
+					    	<img src="images/add_small.png" ng-click="addVaccClicked()">
 					    </section>
 					     <section class="sub_title_complex_details" ng-hide="!addVaccState()">
 					    	<p> Details </p>
-					    	<img src="images/edit.png">
+					    	<img src="images/edit_small.png">
 					    </section>
 					     <!-- new vaccination form will be displayed if the list is empty-->
 						<section ng-hide="!addVaccState()">
@@ -90,28 +90,27 @@
 							</form>
 						</section>
 						<!-- list of all vaccination the current animal has -->
-					    <section ng-repeat="vacc in currAnimal.animalVaccination | orderBy: vaccOrder" 
-					    		 ng-hide="addVaccState()">
-					       	<section class="scroll_list_item_close" ng-click="vaccItemClicked(vacc)">
-						       	<section> <img src="images/vaccination.png"> </section>
-						       	<section> {{vacc.vaccName}} </section>				       		
-				       			<section ng-class="{'width25' : vacc.vaccItemClickedVar,
-				       								'width40' : !vacc.vaccItemClickedVar}">
-				       					{{calcTimeLeft(vacc.vaccDate,vacc.vaccExp)}} </section>	  
-					       	</section> 
-					       	<section class="scroll_list_delete_item" ng-hide="!vacc.vaccItemClickedVar"> 
-				       				<img src="images/add.png" ng-click="deleteItemComplexDetail('vacc',vacc._id)">
-				       		</section>
-				       		<div class="clear"></div>
-					       	<section class="open_details" ng-switch="vacc.vaccItemClickedVar">
-						       	<section ng-switch-when="true"> <!-- open it when clicked on the item -->
+				       	<section ng-repeat="vacc in currAnimal.animalVaccination | orderBy: vaccOrder" 
+				    		 	ng-hide="addVaccState()" class="scroll_list_item_close"
+				    		 	ng-class="{'no_border' : $first}" ng-click="vaccItemClicked(vacc)">
+					       	<img src="images/vaccination.png">
+					       	<p> {{vacc.vaccName}} </p>				       		
+			       			<p ng-class="{'time_left_align' : vacc.vaccItemClickedVar,
+			       						  'time_left' : !vacc.vaccItemClickedVar}"> 
+			       					{{calcTimeLeft(vacc.vaccDate,vacc.vaccExp)}} </p>
+				       		<section class="scroll_list_delete_item" ng-hide="!vacc.vaccItemClickedVar"> 
+			       				<img src="images/trash.png" ng-click="deleteItemComplexDetail('vacc',vacc._id)">
+			       			</section>
+			       		</section>
+				       		<!-- open it when clicked on the item -->
+					       <!-- 	<section class="open_details" ng-switch="vacc.vaccItemClickedVar">
+						       	<section ng-switch-when="true"> 
 						       		<section class="scroll_list_row_details">
 						       			Date: {{vacc.vaccDate | date:'dd/MM/yy'}} </section>
 						       		<section class="scroll_list_row_details">
 						       			Exp: {{vacc.vaccExp | date:'dd/MM/yy'}} </section>
 						       	</section>	  
-						    </section>
-					     </section>
+						    </section>  --> 
 					</section>
 			    </ng-switch>
 			    <li class="scroll_list_arrow" ng-hide="addVaccState() && vaccItemOpen()">
@@ -132,11 +131,11 @@
 					    </section>
 					    <section class="sub_title_complex_details" ng-hide="addFoodState()">
 					    	<p> All </p>
-					    	<img src="images/add.png" ng-click="addFoodClicked()">
+					    	<img src="images/add_small.png" ng-click="addFoodClicked()">
 					    </section>
 					     <section class="sub_title_complex_details" ng-hide="!addFoodState()">
 					    	<p> Details </p>
-					    	<img src="images/edit.png">
+					    	<img src="images/edit_small.png">
 					    </section>	
 					     <!-- new food form will be displayed if the list is empty-->
 						<section ng-hide="!addFoodState()">
@@ -182,36 +181,35 @@
 							</form>
 						</section>
 						<!-- list of all food the current animal has -->
-   						<section ng-repeat="food in currAnimal.animalFood | orderBy: foodOrder"
-    		 					  ng-hide="addFoodState()">
-       						<section class="scroll_list_item_close" ng-click="foodItemClicked(food)">
-       							<section><img src="images/food.png"></section>	
-       							<section> {{food.foodName}} </section>
-       							<section ng-class="{'width25' : food.foodItemClickedVar,
-   													'width40' : !food.foodItemClickedVar}">
-       		 							{{calcTimeLeftForFood(food)}} </section>
-       						</section> 
+       					<section ng-repeat="food in currAnimal.animalFood | orderBy: foodOrder"
+    		 				  ng-hide="addFoodState()" class="scroll_list_item_close" 
+    		 				  ng-class="{'no_border' : $first}" ng-click="foodItemClicked(food)">
+       						<img src="images/food.png">
+       						<p> {{food.foodName}} </p>
+       						<p ng-class="{'time_left_align' : food.foodItemClickedVar,
+   										  'time_left' : !food.foodItemClickedVar}">
+       		 						{{calcTimeLeftForFood(food)}} </p>
        						<section class="scroll_list_delete_item" ng-hide="!food.foodItemClickedVar"> 
-   									<img src="images/add.png" ng-click="deleteItemComplexDetail('food',food._id)">
-   							</section>
-       						<div class="clear"></div>	
-       						<section class="open_details" ng-switch="food.foodItemClickedVar">
-						       	<section ng-switch-when="true"> <!-- open it when clicked on the item -->
-						       		<section class="scroll_list_row_details">
-						       			Brand : {{food.foodBrand}} </section>
-						       		<section class="scroll_list_row_details">
-						       			Bag weight : {{food.foodBagWeight}} kg </section>
-						       		<section class="scroll_list_row_details">
-						       			Bag price : {{food.foodBagPrice}} shekel </section>
-						       		<section class="scroll_list_row_details">
-						       			Daily usage : {{food.foodDailyUsage}} gr </section>
-						       		<section class="scroll_list_row_details">
-						       			Brand : {{food.foodName}} </section>	
-						       		<section class="scroll_list_row_details">
-						       			Date: {{food.foodDate | date:'dd/MM/yy'}} </section>
-						       	</section>	  
-						    </section>
-					    </section>
+   								<img src="images/trash.png" ng-click="deleteItemComplexDetail('food',food._id)">
+   							</section>	
+   						</section> 
+   						<!-- open it when clicked on the item -->
+   						<!-- <section class="open_details" ng-switch="food.foodItemClickedVar">
+					       	<section ng-switch-when="true">
+					       		<section class="scroll_list_row_details">
+					       			Brand : {{food.foodBrand}} </section>
+					       		<section class="scroll_list_row_details">
+					       			Bag weight : {{food.foodBagWeight}} kg </section>
+					       		<section class="scroll_list_row_details">
+					       			Bag price : {{food.foodBagPrice}} shekel </section>
+					       		<section class="scroll_list_row_details">
+					       			Daily usage : {{food.foodDailyUsage}} gr </section>
+					       		<section class="scroll_list_row_details">
+					       			Brand : {{food.foodName}} </section>	
+					       		<section class="scroll_list_row_details">
+					       			Date: {{food.foodDate | date:'dd/MM/yy'}} </section>
+					       	</section>	  
+					    </section> -->
 					</section>
 			    </ng-switch>
 			    <li class="scroll_list_arrow">
@@ -232,11 +230,11 @@
 					    </section>
 					    <section class="sub_title_complex_details" ng-hide="addCareState()">
 					    	<p> All </p>
-					    	<img src="images/add.png" ng-click="addCareClicked()">
+					    	<img src="images/add_small.png" ng-click="addCareClicked()">
 					    </section>
 					     <section class="sub_title_complex_details" ng-hide="!addCareState()">
 					    	<p> Details </p>
-					    	<img src="images/edit.png">
+					    	<img src="images/edit_small.png">
 					    </section>
 					     <!-- new care form will be displayed if the list is empty-->
 						<section ng-hide="!addCareState()">
@@ -264,28 +262,27 @@
 							</form>
 						</section>
 						<!-- list of all care the current animal has -->
-					    <section ng-repeat="care in currAnimal.animalCare | orderBy: careOrder"
-					    		 ng-hide="addCareState()">
-					       	<section class="scroll_list_item_close" ng-click="careItemClicked(care)">
-					       		<section><img src="images/care.png"></section>
-				       			<section> {{care.careType}} </section>
-				       			<section ng-class="{'width25' : care.careItemClickedVar,
-   													'width40' : !care.careItemClickedVar}">
-   									 	{{calcTimeLeft(care.careDate,care.careExp)}} </section>
-					       	</section>
-					       	<section class="scroll_list_delete_item" ng-hide="!care.careItemClickedVar"> 
-   								<img src="images/add.png" ng-click="deleteItemComplexDetail('care',care._id)">
-   							</section>
-					       	<div class="clear"></div>
-					       	<section class="open_details" ng-switch="care.careItemClickedVar">
-						       	<section ng-switch-when="true"> <!-- open it when clicked on the item -->
-						       		<section class="scroll_list_row_details">
-						       			Date: {{care.careDate | date:'dd/MM/yy'}} </section>
-						       		<section class="scroll_list_row_details">
-						       			Exp: {{care.careExp | date:'dd/MM/yy'}} </section>
-						       	</section>	  
-						    </section>
-					     </section>
+				       	<section ng-repeat="care in currAnimal.animalCare | orderBy: careOrder"
+					    		 ng-hide="addCareState()" class="scroll_list_item_close" 
+					    		 ng-class="{'no_border' : $first}" ng-click="careItemClicked(care)">
+				       		<img src="images/care.png">
+			       			<p> {{care.careType}} </p>
+			       			<p ng-class="{'time_left_align' : care.careItemClickedVar,
+										  'time_left' : !care.careItemClickedVar}">
+								 	{{calcTimeLeft(care.careDate,care.careExp)}} </p>
+				       		<section class="scroll_list_delete_item" ng-hide="!care.careItemClickedVar"> 
+								<img src="images/trash.png" ng-click="deleteItemComplexDetail('care',care._id)">
+							</section>
+						</section>
+   						<!-- open it when clicked on the item -->
+				       	<!-- <section class="open_details" ng-switch="care.careItemClickedVar">
+					       	<section ng-switch-when="true">
+					       		<section class="scroll_list_row_details">
+					       			Date: {{care.careDate | date:'dd/MM/yy'}} </section>
+					       		<section class="scroll_list_row_details">
+					       			Exp: {{care.careExp | date:'dd/MM/yy'}} </section>
+					       	</section>	  
+					    </section> -->
 					</section>
 			    </ng-switch>
 			    <li class="scroll_list_arrow">

@@ -1,29 +1,39 @@
-<section id="new_animal">
-	<section id="new_animal_title"> New </section>
-	<section id="new_animal_pic"> 
+<section id="new_animal_page">
+	<section id="new_animal">
+		<section id="new_animal_title"> <p> New </p> </section>
+		<section id="new_animal_pic"> 
 			<input type='file' id="imgInp" multiple accept='image/*' 
-				   onchange="angular.element(this).scope().uploadFile(this.files)" style="display:none">
-			<img id="profileImage" ng-src="#" alt="profileImage" class="circlephoto" 
-			style="cursor:pointer">
-	</section>
-	<section id="new_animal_details"> Details </section>
-	<section id="new_animal_form"> 
-		<form ng-submit="checkIfAddAnimalAvailable()">
-			<p>
-				<label> Name:  </label>
-				<input type="text" name="name" ng-model="animal.animalName">
-			</p>
-			<p>
-				<label> Age: </label>
-				<input type="number" name="age" ng-model="animal.animalAge"> 
-			</p>
-			<p>
-				<label> Weight: </label>
-				<input type="number" name="weight" ng-model="animal.animalWeight"> 
-			</p>
+					   onchange="angular.element(this).scope().uploadFile(this.files)" style="display:none">
+			<img id="profileImage" ng-src="../images/profileImg.png" alt="profileImage" class="circlephoto">
+		</section>
+		<section id="new_animal_details"> 
+			<p> Details </p> 
+			<img src="../images/edit.png">
+		</section>
+		<section id="new_animal_form"> 
+			<form ng-submit="checkIfAddAnimalAvailable()">
+				<section class="form_row">
+					<img src="../images/num1.png">
+					<label> Name:  </label>
+					<input type="text" name="name" ng-model="animal.animalName">
+				</section>
 
-			<input id="new_animal_done" type="submit" value="Done">
-		</form>
+				<section class="form_row">
+					<img src="../images/num2.png">
+					<label> Age: </label>
+					<input type="number" name="age" ng-model="animal.animalAge"> 
+				</section>
+
+				<section class="form_row">
+					<img src="../images/num3.png">
+					<label> Weight: </label>
+					<input type="number" name="weight" ng-model="animal.animalWeight"> 
+				</section>
+				<section id="form_spacer"> </section>
+				<section id="new_animal_done">
+					<input type="image" src="../images/done_new_animal_form.png" alt="submit_new_animal">
+				</section>
+			</form>
+		</section>
 	</section>
 </section>
-

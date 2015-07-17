@@ -1,28 +1,30 @@
-<section class="noti" ng-repeat="noti in user.notifications | orderBy:notiOrder">
-	<section class="noti_title"> <!-- title -->
-		<section> <img ng-src="{{findAnimalImgById(noti.animalId)}}"> </section>
-		<section> {{findAnimalNameById(noti.animalId)}} </section>
-		<section>
-			{{calcTimeForNoti(noti.notiType,noti.notiReceivedDate,noti.notiExpiredDate)}}
+<section id="noti_page">
+	<section class="noti" ng-repeat="noti in user.notifications | orderBy:notiOrder">
+		<section class="noti_title"> <!-- title -->
+			<section> <img ng-src="{{findAnimalImgById(noti.animalId)}}"> </section>
+			<section> {{findAnimalNameById(noti.animalId)}} </section>
+			<section> {{calcTimeForNoti(noti.notiType,noti.notiReceivedDate,noti.notiExpiredDate)}} </section>
 		</section>
-		<div class="clear"></div>
-	</section>
-	<section class="noti_body">	<!-- body of the noti -->
-		<section> <!-- big img -->
-			<img ng-src="../images/{{noti.notiType}}.png">
+		<section class="noti_body">	<!-- body of the noti -->
+			<section> <!-- big img -->
+				<img ng-src="../images/{{noti.notiType}}.png">
+			</section>
+			<section> <!-- 2 rows description -->
+				<p> {{noti.notiName}} </p>
+				<p> Is running out. 
+					<br> it's time to buy...
+				</p>
+			</section>
+			<div class="clear"></div>
 		</section>
-		<section> <!-- 2 rows description -->
-			{{noti.notiName}}
+		<section class="noti_end"> <!-- reminder & done -->
+			<section> 
+				<img src="../images/reminder.png">
+				<p> Reminder </p>
+			</section>
+			<section ng-click="deleteNoti(noti._id)"> Done 
+			</section>
+			<div class="clear"></div>
 		</section>
-		<div class="clear"></div>
-	</section>
-	<section class="noti_end"> <!-- reminder & done -->
-		<section> 
-			<img>
-			Reminder
-		</section>
-		<section ng-click="deleteNoti(noti._id)"> Done 
-		</section>
-		<div class="clear"></div>
 	</section>
 </section>
