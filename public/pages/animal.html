@@ -1,39 +1,43 @@
 <section id="simple_details">
 	<section> <!-- name field -->
 		<section class="simple_detail_edit_img" ng-click="editDetailClicked('animalName')"
-				 ng-class="{'edit_mode' : isInEditMode('animalName')}"> 
+				 ng-class="{'edit_mode' : isInEditMode('animalName')}">
+			<section> </section>
 		</section>
 		<section class="simple_detail_desc"> 
-			<section> <input ng-readonly="!currAnimal.editname" ng-model="currAnimal.animalName"> 
+			<section> <input id="simple_detail_name_bold" 
+						ng-readonly="!currAnimal.editname" ng-model="currAnimal.animalName"> 
 			</section> 
 			<section ng-if="isInEditMode('animalName')" ng-click="doneEditClicked('animalName')"> 
-				DONE </section>
+				Done </section>
 		</section>
 		<div class="clear"></div>
 	</section>
 	<section> <!-- age field -->
 		<section class="simple_detail_edit_img" ng-click="editDetailClicked('animalAge')"
-				 ng-class="{'edit_mode' : isInEditMode('animalAge')}">  
+				 ng-class="{'edit_mode' : isInEditMode('animalAge')}">
+			<section> </section>
 		</section>
 		<section class="simple_detail_desc"> 
 			<section> Age :
 				<input ng-readonly="!currAnimal.editage" ng-model="currAnimal.animalAge">
 			</section> 
 			<section ng-if="isInEditMode('animalAge')" ng-click="doneEditClicked('animalAge')"> 
-				DONE </section>
+				Done </section>
 		</section>
 		<div class="clear"></div>
 	</section>
 	<section> <!-- weight field -->
 		<section class="simple_detail_edit_img" ng-click="editDetailClicked('animalWeight')"
-				 ng-class="{'edit_mode' : isInEditMode('animalWeight')}">   
+				 ng-class="{'edit_mode' : isInEditMode('animalWeight')}"> 
+			<section> </section>
 		</section>
 		<section class="simple_detail_desc"> 
 			<section> Weight :
 				<input ng-readonly="!currAnimal.editweight" ng-model="currAnimal.animalWeight">
 			</section> 
 			<section ng-if="isInEditMode('animalWeight')" ng-click="doneEditClicked('animalWeight')"> 	
-				DONE </section>
+				Done </section>
 		</section>
 		<div class="clear"></div>
 	</section>			
@@ -43,8 +47,9 @@
 			<!-- vaccination details on the current animal -->
 			<ul>
 			    <li class="scroll_list_title" ng-class="{'open_scroll_list': vaccItemOpen()}">
+			    	<section> <img src="../images/vaccination_small.png">
+			    	</section>
 			    	<section> Vaccination </section>
-			    	<div class="clear"></div>
 			    </li>
 			    <ng-switch on="vaccItemOpen()">
 			    	<section ng-switch-when="true">
@@ -87,9 +92,6 @@
 						<!-- list of all vaccination the current animal has -->
 					    <section ng-repeat="vacc in currAnimal.animalVaccination | orderBy: vaccOrder" 
 					    		 ng-hide="addVaccState()">
-					       	
-
-
 					       	<section class="scroll_list_item_close" ng-click="vaccItemClicked(vacc)">
 						       	<section> <img src="images/vaccination.png"> </section>
 						       	<section> {{vacc.vaccName}} </section>				       		
@@ -101,10 +103,6 @@
 				       				<img src="images/add.png" ng-click="deleteItemComplexDetail('vacc',vacc._id)">
 				       		</section>
 				       		<div class="clear"></div>
-
-
-
-
 					       	<section class="open_details" ng-switch="vacc.vaccItemClickedVar">
 						       	<section ng-switch-when="true"> <!-- open it when clicked on the item -->
 						       		<section class="scroll_list_row_details">
@@ -116,15 +114,16 @@
 					     </section>
 					</section>
 			    </ng-switch>
-			    <li class="scroll_list_arrow">
-			       <section ng-click='openVaccList("open")'><img src="images/arrow_down.png"></section>        
+			    <li class="scroll_list_arrow" ng-hide="addVaccState() && vaccItemOpen()">
+			       <section ng-click='openVaccList("open")' ng-class="{'list_arrow_down':!vaccItemOpen(), 'list_arrow_up':vaccItemOpen()}"> </section>        
 				</li>  
 			</ul>
 			<!-- food details on the current animal -->
 			<ul>
 			    <li class="scroll_list_title" ng-class="{'open_scroll_list': foodItemOpen()}">
+			    	<section> <img src="../images/food_small.png">
+			    	</section>
 			    	<section> Food </section>
-			    	<div class="clear"></div>
 			    </li>
 			    <ng-switch on="foodItemOpen()">
 			    	<section ng-switch-when="true">
@@ -216,14 +215,15 @@
 					</section>
 			    </ng-switch>
 			    <li class="scroll_list_arrow">
-			       <section ng-click='openFoodList("open")'><img src="images/arrow_down.png"></section>        
+			       <section ng-click='openFoodList("open")' ng-class="{'list_arrow_down':!foodItemOpen(), 'list_arrow_up':foodItemOpen()}"> </section>        
 				</li>  
 			</ul>
 			<!-- care details on the current animal -->
 			<ul>
 			    <li class="scroll_list_title" ng-class="{'open_scroll_list': careItemOpen()}">
+			    	<section> <img src="../images/care_small.png">
+			    	</section>
 			    	<section> Care </section>
-			    	<div class="clear"></div>
 			    </li>
 			    <ng-switch on="careItemOpen()">
 			    	<section ng-switch-when="true">
@@ -289,7 +289,7 @@
 					</section>
 			    </ng-switch>
 			    <li class="scroll_list_arrow">
-			       <section ng-click='openCareList("open")'><img src="images/arrow_down.png"></section>        
+			       <section ng-click='openCareList("open")' ng-class="{'list_arrow_down':!careItemOpen(), 'list_arrow_up':careItemOpen()}"> </section>        
 				</li>  
 			</ul>
 		</section>

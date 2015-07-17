@@ -22,7 +22,7 @@ furrycareApp.config(function($routeProvider){
 furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$cookieStore','$window','$location',
                                                     function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {   
 // https://final-ws-furrycare.herokuapp.com
-    $scope.page = 'animal';
+    $scope.page = 'notification';
 
     $scope.isUserLogedIn = function() {
         //console.log("on logedIn...");
@@ -113,7 +113,7 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
         if ($scope.isUserLogedIn()) {
             $scope.getUser();
             $scope.newAnimalClicked = false;
-            $location.path("/animal");
+            $location.path("/notification");
         }
         /* else
             $scope.login(); */
@@ -536,7 +536,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             // this extra made the image size 50*50 and circle it
             ///c_scale,h_50,r_30,w_50
             var tempImageUrl = data;
-            profileImageUrl = tempImageUrl.slice(0,48) + "/c_scale,h_50,r_30,w_50" + tempImageUrl.slice(48 + Math.abs(0));
+            profileImageUrl = tempImageUrl.slice(0,48) + "/c_scale,h_60,r_30,w_60" + tempImageUrl.slice(48 + Math.abs(0));
             // change the image type to png (remove the image white background that create from circle the image)
             var urlLength = profileImageUrl.length;
             tempImageUrl = profileImageUrl;
@@ -579,13 +579,19 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
     $scope.createNoti = function(notiType,notiName,notiReceivedDate,notiExpiredDate) {
         console.log("create notification to :"+notiType);
         console.log(notiName);
-        // push the notification to db
-        $http.get('http://localhost:3000/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
-            +'&notiType='+notiType+'&notiName='+notiName
-            +'&notiReceivedDate='+new Date(notiReceivedDate)+'&notiExpiredDate='+new Date(notiExpiredDate))
-            .success(function (data){
-                $scope.$parent.$parent.user = data;
-        });
+        // checking if notification is needed
+        if ($scope.calcTimeLeft(notiReceivedDate,notiExpiredDate) == "") {
+            console.log("two entered dates is passed.")
+            // do something ?
+        } else {
+            // push the notification to db
+            $http.get('http://localhost:3000/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
+                +'&notiType='+notiType+'&notiName='+notiName
+                +'&notiReceivedDate='+new Date(notiReceivedDate)+'&notiExpiredDate='+new Date(notiExpiredDate))
+                .success(function (data){
+                    $scope.$parent.$parent.user = data;
+            });
+        }
     };
     $scope.createFoodNoti = function(notiName,notiReceivedDate,bagWeight,dailyUse) {
         console.log("create notification to food.");

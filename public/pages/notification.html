@@ -1,7 +1,7 @@
 <section class="noti" ng-repeat="noti in user.notifications | orderBy:notiOrder">
 	<section class="noti_title"> <!-- title -->
 		<section>
-			<img ng-src="../images/{{findAnimalImgById(noti.animalId)}}">
+			<img ng-src="{{findAnimalImgById(noti.animalId)}}">
 			{{findAnimalNameById(noti.animalId)}}
 		</section>
 		<section>
