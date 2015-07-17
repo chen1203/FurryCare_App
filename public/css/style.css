@@ -522,13 +522,22 @@ a{
 		border-top: 1px solid #221f1f; 
 		position: relative;
 	}
-	#new_animal_done input{
-		position: absolute;
-		width: 54px;
-		height: 17px;
-		top: 19px;
-		left: 255px;
+	#submit_new_animal{
+		visibility: hidden;
 	}
+	#done_new_animal{
+		font-family: gil_bold, arial, sans-serif;
+		font-size: 23px;
+		color:#f05d58;
+		text-align: center;
+	}
+	/*#new_animal_done input{*/
+		/*position: absolute;*/
+		/*width: 54px;*/
+		/*height: 17px;*/
+		/*top: 19px;*/
+		/*left: 255px;*/
+	/*}*/
 	#default_circle {
 		margin: 0 auto;
 		margin-top: 16px;

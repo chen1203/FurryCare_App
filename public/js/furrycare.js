@@ -507,6 +507,9 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     $("#profileImage").click(function () {
         $("#imgInp").trigger('click');
     });
+    $("#done_new_animal").click(function () {
+        $("#submit_new_animal").trigger('click');
+    });
 
     function readURL(input) {
         if (input.files && input.files[0]) {
