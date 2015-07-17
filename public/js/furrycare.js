@@ -21,7 +21,7 @@ furrycareApp.config(function($routeProvider){
 
 furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$cookieStore','$window','$location',
                                                     function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {   
-// https://final-ws-furrycare.herokuapp.com
+// https://furry-care-ws.herokuapp.com
     $scope.page = 'notification';
 
     $scope.isUserLogedIn = function() {
@@ -56,7 +56,7 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
     };
     $scope.getUser = function() {
         console.log("getUser is called!!! so the user is updated!");
-        $http.get('http://localhost:3000/getUser?userMail='+$cookies.userMail).success(function (data) {
+        $http.get('https://furry-care-ws.herokuapp.com/getUser?userMail='+$cookies.userMail).success(function (data) {
             console.log(data);
             $scope.user = data;
             console.log("user name : "+$scope.user.userName);
@@ -70,7 +70,7 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
         console.log("pass: "+ $scope.user.pass);
         console.log("try number: "+$scope.tries);       
 
-        $http.get('http://localhost:3000/getUser?userMail='+$scope.user.email)
+        $http.get('https://furry-care-ws.herokuapp.com/getUser?userMail='+$scope.user.email)
             .success(function (data){
                 console.log("login...");
                 console.log("data(user) returned from ws ");  
@@ -271,7 +271,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         }
         if (val !== pre_val) {
             console.log("doneEditClicked....");
-            $http.get('http://localhost:3000/setAnimalField?field='+detail+'&animalId='+$scope.$parent.currAnimal._id+
+            $http.get('https://furry-care-ws.herokuapp.com/setAnimalField?field='+detail+'&animalId='+$scope.$parent.currAnimal._id+
                     '&animalNewVal='+val)
                     .success(function (data){
                         $scope.$parent.user = data;
@@ -296,7 +296,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         console.log("pic: "+ $scope.animal.animalPic); // pic url;
 
 
-        $http.get('http://localhost:3000/setNewAnimal?animalName='+$scope.animal.animalName+'&animalAge='+$scope.animal.animalAge
+        $http.get('https://furry-care-ws.herokuapp.com/setNewAnimal?animalName='+$scope.animal.animalName+'&animalAge='+$scope.animal.animalAge
             +'&animalWeight='+$scope.animal.animalWeight+'&animalPic='+$scope.animal.animalPic)
             .success(function (data){
                 console.log("set new animal successfully...");
@@ -310,7 +310,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     /* delete the current animal from animals of the user */
     $scope.deleteAnimal = function() {
         console.log("delete animal name :"+$scope.$parent.currAnimal.animalName);
-        $http.get('http://localhost:3000/deleteAnimal?animalId='+$scope.$parent.currAnimal._id)
+        $http.get('https://furry-care-ws.herokuapp.com/deleteAnimal?animalId='+$scope.$parent.currAnimal._id)
             .success(function (data){
                 $scope.$parent.user = data;
                 console.log(data);
@@ -429,7 +429,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     };
     $scope.createFood = function (){
         var id = $scope.$parent.currAnimal._id; 
-        $http.get('http://localhost:3000/addNewFood?currAnimalId='+$scope.$parent.currAnimal._id
+        $http.get('https://furry-care-ws.herokuapp.com/addNewFood?currAnimalId='+$scope.$parent.currAnimal._id
             +'&foodName='+$scope.food.foodName+'&foodBrand='+$scope.food.foodBrand
             +'&foodBagWeight='+$scope.food.foodBagWeight+'&foodBagPrice='+$scope.food.foodBagPrice
             +'&foodDailyUsage='+$scope.food.foodDailyUsage+'&foodDate='+new Date($scope.food.foodDate))
@@ -443,7 +443,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     };
     $scope.createCare = function (){
         var id = $scope.$parent.currAnimal._id; 
-        $http.get('http://localhost:3000/addNewCare?currAnimalId='+$scope.$parent.currAnimal._id
+        $http.get('https://furry-care-ws.herokuapp.com/addNewCare?currAnimalId='+$scope.$parent.currAnimal._id
             +'&careType='+$scope.care.careType+'&careDate='+new Date($scope.care.careDate)
             +'&careExp='+new Date($scope.care.careExp))
             .success(function (data){
@@ -483,7 +483,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     $scope.deleteItemComplexDetail = function(typeComplexDetail,itemId) {
         var animalId = $scope.$parent.currAnimal._id; 
         console.log("delete item clicked");
-        $http.get('http://localhost:3000/deleteItemComplexDetail?animalId='+animalId
+        $http.get('https://furry-care-ws.herokuapp.com/deleteItemComplexDetail?animalId='+animalId
             +'&typeComplexDetail='+typeComplexDetail+'&itemId='+itemId)
             .success(function (data){
                 $scope.$parent.user = data;
@@ -524,7 +524,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         var fd = new FormData();
         //Take the first selected file
         fd.append("file", files[0]);
-        $http.post('http://localhost:3000/uploadImg', fd, {
+        $http.post('https://furry-care-ws.herokuapp.com/uploadImg', fd, {
             withCredentials: true,
             headers: {'Content-Type': undefined},
             transformRequest: angular.identity
@@ -585,7 +585,7 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
             // do something ?
         } else {
             // push the notification to db
-            $http.get('http://localhost:3000/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
+            $http.get('https://furry-care-ws.herokuapp.com/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
                 +'&notiType='+notiType+'&notiName='+notiName
                 +'&notiReceivedDate='+new Date(notiReceivedDate)+'&notiExpiredDate='+new Date(notiExpiredDate))
                 .success(function (data){
@@ -600,7 +600,7 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
         dateToExp.setDate(dateToExp.getDate() + daysleft); 
         console.log(dateToExp);
         // push the notification to db
-        $http.get('http://localhost:3000/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
+        $http.get('https://furry-care-ws.herokuapp.com/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
             +'&notiType=food'+'&notiName='+notiName
             +'&notiReceivedDate='+new Date(notiReceivedDate)+'&notiExpiredDate='+new Date(dateToExp))
             .success(function (data){
@@ -676,7 +676,7 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
     $scope.deleteNoti = function(notiId) {
         console.log("delete noti from app");
         console.log("noti id: "+notiId);
-        $http.get('http://localhost:3000/deleteNoti?notiId='+notiId)
+        $http.get('https://furry-care-ws.herokuapp.com/deleteNoti?notiId='+notiId)
             .success(function (data){
                 $scope.$parent.user = data;
         }); 
