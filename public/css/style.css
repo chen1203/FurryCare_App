@@ -25,8 +25,8 @@ a{
 	clear: both;
 }
 
-@media (max-width: 1440px){	
-
+@media all and (max-width: 375px){	
+	
 	#wrapper{
 		/*width:100%;*/
 		width: 640px;
