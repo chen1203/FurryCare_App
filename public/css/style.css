@@ -285,13 +285,7 @@ a{
 		background: #ffffff url("../images/arrow_up.png") no-repeat center;
 		background-size: 63px 27px;
 	}
-	/*.scroll_list_arrow img {
-		width: 63px;
-		height: 27px;
-		display: block;
-		margin: 0 auto;
-		margin-top: 17px;	
-	}*/
+	/* WE ARE HERE */
 
 
 	.most_imp_detail {
@@ -464,33 +458,53 @@ a{
 
 	/******************** NOTIFICARION PAGE *********************/
 	.noti {
-		width: 90%;
-		border: 2px solid #000000;
-		margin: 0 auto;
-		margin-bottom: 30px;
+		width: 589px;
+		border: 1.9px solid #221f1f;
+		margin: 21px auto;
 	}
 	.noti>section {
-		border-bottom: 1px solid #CBCBCB;
+		/*border-bottom: 1px solid #CBCBCB;*/
 	}
 	.noti>section>section {
-		float: left;
+		/*float: left;*/
 	}
 	.noti_title {
-
+		width: 564px;
+		height: 68px;
+		border-bottom: 1px solid #221f1f;	
+		margin-left: 12px;
+		position: relative;
+	}
+	.noti_title>section {
+		display: inline-block;
+		position: absolute;
 	}
 	.noti_title>section:nth-child(1) {
-		width: 70%;
+		top: 13px;
+		left: 7px;
 	}
 	.noti_title>section:nth-child(1)>img {
-		width: 30px;
-		height: 30px;
+		width: 44px;
+		height: 44px;
 	}
 	.noti_title>section:nth-child(2) {
-		width: 28%;
-		text-align: right;
+		top: 26px;
+		left: 65px;
+		font-family: gil_bold,arial,sans-serif;
+		font-size: 21px; 
+	}
+	.noti_title>section:nth-child(3) {
+		top: 26px;
+		/*left: 490px;  508px */
+		right: 7px;
+		font-family: gil,arial,sans-serif;
+		font-size: 20px;
 	}
 	.noti_body {
 		height: 100px;
+	}
+	.noti_body>section, .noti_end>section {
+		float: left;
 	}
 	.noti_body>section:nth-child(1) {
 		width: 30%;
