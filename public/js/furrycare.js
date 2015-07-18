@@ -19,18 +19,6 @@ furrycareApp.config(function($routeProvider){
           });*/          
 });
 
-furrycareApp.controller('doneCtrl', ['$scope','$rootScope','$http','$cookies','$cookieStore','$window','$location',
-    function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {
-
-        $("#done_new_complex_details").click(function () {
-            $("#submit_new_complex_details").trigger('click');
-        });
-    }]);
-
-
-
-
-
 furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$cookieStore','$window','$location',
                                                     function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {   
 // https://furry-care-ws.herokuapp.com
@@ -233,9 +221,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     }
     /* edit button of simple detail of current animal was clicked : name/age/weight */
     $scope.editDetailClicked = function(detail) {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         console.log(detail);
-
 
         if (detail === "animalName") {
             //console.log("curr animal name: "+$scope.currAnimal.animalName);
@@ -325,6 +311,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         $http.get('https://furry-care-ws.herokuapp.com/deleteAnimal?animalId='+$scope.$parent.currAnimal._id)
             .success(function (data){
                 $scope.$parent.user = data;
+                console.log("return from delete server....");
                 console.log(data);
                 console.log($scope.$parent.currAnimal.animalName);
                 // update new current animal because last current animal was deleted.
@@ -332,13 +319,6 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         });
     };
     $scope.openVaccList = function(item){
-        console.log("pressed arrow!!!! ");
-        $("#done_new_vacc").click(function () {
-            console.log("hhhhhhhhhhh");
-            $("#submit_new_vacc").trigger('click');
-        });
-
-
         if ($scope.isVaccOpen(item)){
             $scope.$parent.currAnimal.vaccOpened = undefined;
         } else {
@@ -528,19 +508,6 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     $("#done_new_animal").click(function () {
         $("#submit_new_animal").trigger('click');
     });
-    $("#done_new_complex_details").click(function () {
-        $("#submit_new_complex_details").trigger('click');
-    });
-     $("#done_new_vacc").click(function () {
-        $("#submit_new_vacc").trigger('click');
-    });
-    $scope.ccc = function() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-    }
-    $scope.checkVaccSubmit = function() {
-        console.log("55555555555555555555");
-    }
-
     
 
     function readURL(input) {
@@ -603,19 +570,15 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
       }
     };
 
-
-
-
-
 }]); 
 
-furrycareApp.controller('notificationCtrl', function ($scope,$http) {
+furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
 
     $scope.createNoti = function(notiType,notiName,notiReceivedDate,notiExpiredDate) {
         console.log("create notification to :"+notiType);
         console.log(notiName);
         // checking if notification is needed
-        if ($scope.calcTimeLeft(notiReceivedDate,notiExpiredDate) == "") {
+        if ($scope.calcTimeLeftWithTwoDates(notiReceivedDate,notiExpiredDate) == "") {
             console.log("two entered dates is passed.")
             // do something ?
         } else {
@@ -642,8 +605,25 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
                 $scope.$parent.$parent.user = data;
         });
     };
+    $scope.calcReturnTimeFromOneDate = function(date,currentDate) {
+                var timeToReturn;
+                timeToReturn = date.getFullYear() - currentDate.getFullYear();
+                if (timeToReturn == 1)
+                    return timeToReturn+" year"; // 1 year
+                if (timeToReturn > 1)
+                    return timeToReturn+" years";
+                timeToReturn = (date.getMonth()+1) - (currentDate.getMonth()+1);
+                if (timeToReturn == 1)
+                    return timeToReturn+" month"; // 1 month
+                if (timeToReturn > 1)
+                    return timeToReturn+" months";
+                timeToReturn = date.getDate() - currentDate.getDate();
+                if (timeToReturn == 1)
+                    return timeToReturn+" day"; // 1 day
+                return timeToReturn+" days";
+    };
     /* calculate time left for care or vacc */
-    $scope.calcTimeLeft = function (date,expDate) {
+    $scope.calcTimeLeftWithTwoDates = function (date,expDate) {
         var currentDate = new Date();
         var objDate = new Date(date);
         currentDate.setHours(0,0,0,0);
@@ -651,17 +631,10 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
 
         var timeDiff = objDate.getTime() - currentDate.getTime();
         //var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-
-        if (timeDiff > 0) {
-            if (objDate.getFullYear() > currentDate.getFullYear())
-                return (objDate.getFullYear() - currentDate.getFullYear())+" years";
-            // (objDate.getFullYear() == currentDate.getFullYear()) 
-            if ((objDate.getMonth()+1) > (currentDate.getMonth()+1))
-                return ((objDate.getMonth()+1) - (currentDate.getMonth()+1))+" months";
-            // ((objDate.getMonth+1) == (currentDate.getMonth+1))
-            return (objDate.getDate() - currentDate.getDate())+" days";
-
-        } else { // timeDiff <= 0 , the date is passed so we will check the expDate
+        var timeToReturn;
+        if (timeDiff > 0) 
+            return $scope.calcReturnTimeFromOneDate(objDate,currentDate);
+        else { // timeDiff <= 0 , the date is passed so we will check the expDate
             var exp = new Date(expDate);
             exp.setHours(0,0,0,0);
             timeDiff = exp.getTime() - currentDate.getTime();
@@ -670,26 +643,17 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
             if (timeDiff == 0) 
                 return "today";
             //timeDiff > 0
-            if (exp.getFullYear() > currentDate.getFullYear())
-                return (exp.getFullYear() - currentDate.getFullYear())+" years";
-            // (exp.getFullYear() == currentDate.getFullYear()) 
-            if ((exp.getMonth()+1) > (currentDate.getMonth()+1))
-                return ((exp.getMonth()+1) - (currentDate.getMonth()+1))+" months";
-            // ((exp.getMonth+1) == (currentDate.getMonth+1))
-            return (exp.getDate() - currentDate.getDate())+" days";
+            return $scope.calcReturnTimeFromOneDate(exp,currentDate);
         }
     };
     $scope.calcTimeLeftForFood = function(food) {
         var daysleft = (food.foodBagWeight * 1000) / food.foodDailyUsage;  
         var dateToExp = new Date(food.foodDate);
         dateToExp.setDate(dateToExp.getDate() + daysleft); 
-        return $scope.calcTimeLeft(food.foodDate,dateToExp); 
+        return $scope.calcTimeLeftWithTwoDates(food.foodDate,dateToExp); 
     };
-    $scope.calcTimeForNoti = function(notiType,notiReceivedDate,notiExpiredDate) {
-        if (notiType == "food") {
-            return $scope.calcTimeLeftForFood(notiType,notiReceivedDate,notiExpiredDate);
-        } else // notiType is vacc or care
-            return $scope.calcTimeLeft(notiReceivedDate,notiExpiredDate);
+    $scope.calcTimeForNoti = function(notiReceivedDate,notiExpiredDate) {
+        return $scope.calcTimeLeftWithTwoDates(notiReceivedDate,notiExpiredDate);
     };
     $scope.findAnimalNameById = function(animalId) {
         var nameFound = "";
@@ -717,13 +681,13 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
         }); 
     };
     $scope.closestDate = function(date,exp) {
-        var date = new Date(date);
+        var startDate = new Date(date);
         var currentDate = new Date();
-        date.setHours(0,0,0,0);    
+        startDate.setHours(0,0,0,0);    
         currentDate.setHours(0,0,0,0);
-        var diff1 = date.getTime() - currentDate.getTime();
+        var diff1 = startDate.getTime() - currentDate.getTime();
         if (diff1 > 0)
-            return date;
+            return startDate;
         return new Date(exp);
     }
     $scope.vaccOrder = function(vacc) {
@@ -741,5 +705,57 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http) {
     $scope.notiOrder = function(noti) {
         return $scope.closestDate(noti.notiReceivedDate,noti.notiExpiredDate);
     };
+
+    $scope.checkClosestVacc = function() {
+
+        var vaccArr = [];
+        angular.forEach($scope.$parent.currAnimal.animalVaccination, function(vacc) {
+            var vaccObj = {
+                vaccName: '',
+                closestDate: '' 
+            };
+            vaccObj.vaccName = vacc.vaccName;
+            vaccObj.closestDate = new Date($scope.closestDate(vacc.vaccDate,vacc.vaccExp));
+            vaccArr.push(vaccObj);
+
+        });
+        console.log(vaccArr);
+        var datesArr = $filter('orderBy')(vaccArr,'closestDate');
+
+        console.log("$$$$$$$$$$$$: "+datesArr[0].vaccName);
+
+        var currentDate = new Date();
+        currentDate.setHours(0,0,0,0);
+        var found = 0;
+        angular.forEach(datesArr, function(vacc) {
+            var date = new Date(vacc.closestDate);
+            date.setHours(0,0,0,0);
+            var timeDiff = date.getTime() - currentDate.getTime(); 
+            if (timeDiff >= 0 && found == 0) {// if (vacc is bigger than today)
+                found = 1;
+                var impVacc = vacc;
+                console.log("found imp vacc : "+impVacc.vaccName);
+                return;    
+            }
+        });
+
+    };
+
+
+});
+
+furrycareApp.controller('doneCtrl', function () {
+
+        $("#done_new_vacc").click(function () {
+            $("#submit_new_vacc").trigger('click');
+        });
+        
+        $("#done_new_food").click(function () {
+            $("#submit_new_food").trigger('click');
+        });
+        
+        $("#done_new_care").click(function () {
+            $("#submit_new_care").trigger('click');
+        });
 });
 
