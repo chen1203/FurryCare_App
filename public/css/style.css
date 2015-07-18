@@ -531,6 +531,45 @@ a{
 		color:#f05d58;
 		text-align: center;
 	}
+	/* complex details add new form */
+	.new_complex_details_form{
+		width:564px;
+		height: 100%;
+		margin-left:11px;
+	}
+	.new_complex_details_form>section{
+		width:100%;
+		height: 78px;
+		font-family: gil_bold, arial, sans-serif;
+		font-size: 23px;
+		border-bottom: 1px solid #d7d7d8;
+		position: relative;
+	}
+	.new_complex_details_form>section:nth-child(1){
+		border-top: 1px solid #221f1f;
+	}
+	.new_complex_details_form>section>img{
+		width: 58px;
+		height: 58px;
+		position: absolute;
+		top:7px;
+		left: 13px;
+	}
+	.new_complex_details_form>section>p{
+		position: absolute;
+		top:31px;
+		left: 90px;
+	}
+	.new_complex_details_form>section>input{
+		position: absolute;
+	}
+	#submit_new_complex_details{
+		visibility: hidden;
+	}
+	#done_new_complex_details{
+		color:#f05d58;
+		text-align: center;
+	}
 	/*#new_animal_done input{*/
 		/*position: absolute;*/
 		/*width: 54px;*/
