@@ -19,6 +19,18 @@ furrycareApp.config(function($routeProvider){
           });*/          
 });
 
+furrycareApp.controller('doneCtrl', ['$scope','$rootScope','$http','$cookies','$cookieStore','$window','$location',
+    function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {
+
+        $("#done_new_complex_details").click(function () {
+            $("#submit_new_complex_details").trigger('click');
+        });
+    }]);
+
+
+
+
+
 furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$cookieStore','$window','$location',
                                                     function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {   
 // https://furry-care-ws.herokuapp.com
@@ -319,8 +331,14 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
                 $scope.$parent.updateCurrentAnimal("first");
         });
     };
-
     $scope.openVaccList = function(item){
+        console.log("pressed arrow!!!! ");
+        $("#done_new_vacc").click(function () {
+            console.log("hhhhhhhhhhh");
+            $("#submit_new_vacc").trigger('click');
+        });
+
+
         if ($scope.isVaccOpen(item)){
             $scope.$parent.currAnimal.vaccOpened = undefined;
         } else {
@@ -416,7 +434,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     };
     $scope.createVacc = function (){
         var id = $scope.$parent.currAnimal._id; 
-        $http.get('http://localhost:3000/addNewVacc?currAnimalId='+$scope.$parent.currAnimal._id
+        $http.get('https://furry-care-ws.herokuapp.com/addNewVacc?currAnimalId='+$scope.$parent.currAnimal._id
             +'&vaccName='+$scope.vacc.vaccName+'&vaccDate='+new Date($scope.vacc.vaccDate)
             +'&vaccExp='+new Date($scope.vacc.vaccExp))
             .success(function (data){
@@ -513,6 +531,17 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     $("#done_new_complex_details").click(function () {
         $("#submit_new_complex_details").trigger('click');
     });
+     $("#done_new_vacc").click(function () {
+        $("#submit_new_vacc").trigger('click');
+    });
+    $scope.ccc = function() {
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+    }
+    $scope.checkVaccSubmit = function() {
+        console.log("55555555555555555555");
+    }
+
+    
 
     function readURL(input) {
         if (input.files && input.files[0]) {

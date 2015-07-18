@@ -29,7 +29,7 @@ a{
 
 	#wrapper{
 		/*width:100%;*/
-		width: 640px;
+		width: 64 0px;
 		margin:0 auto;
 	}
 
@@ -372,6 +372,75 @@ a{
 		margin-top: 20px;
 		margin-left: 16px;
 	} 
+	/* complex details add new form */
+	.new_complex_details_form{
+		width:564px;
+		height: 100%;
+		margin-left:11px;
+	}
+	.new_complex_details_form>section{
+		width:100%;
+		height: 78px;
+		font-family: gil_bold, arial, sans-serif;
+		font-size: 23px;
+		border-bottom: 1px solid #d7d7d8;
+	}
+	.new_complex_details_form>section:nth-child(1){
+		border-top: 1px solid #221f1f;
+	}
+	.new_complex_details_form>section>img{
+		width: 58px;
+		height: 58px;
+		float: left;
+		margin-top: 9px;
+		margin-left: 13px;
+	}
+	.new_complex_details_form>section>input, .new_complex_details_form>section>label{
+		float: left;
+		font-size: 24px;
+	}
+	.new_complex_details_form>section>label {
+		margin-top: 29px; 
+		margin-left: 17px; 
+		font-family: gil_bold, arial, sans-serif;
+	}
+	.new_complex_details_form>section>input{
+		margin-top: 31px;
+		font-family: gil, arial, sans-serif;
+		text-align: left
+	}
+	.new_complex_details_form>section>input[type='text'] {
+		margin-left: 8px;
+	}
+	.new_complex_details_form>section>input, .new_complex_details_form>section>input:focus{
+		outline: 0;
+		border: 0px solid;
+	}
+	.spacer_form_complex_detail {
+		height: 141px;
+	}
+	#new_complex_details_last_row {
+		width: 564px;
+		height: 57px;
+		border-top: 1px solid #221f1f; 
+		position: relative;
+	}
+	#submit_new_complex_details{
+		visibility: hidden;
+	}
+	#done_new_complex_details{
+		margin-top: 19px;
+		font-family: gil_bold, arial, sans-serif;
+		font-size: 23px;
+		color:#f05d58;
+		text-align: center;
+	}
+
+	/*::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+	::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+	::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    	color: transparent;
+	}*/
 
 	/* open list not working */
 	/*.open_details {
@@ -447,7 +516,6 @@ a{
 	   -webkit-tap-highlight-color: rgba(0,0,0,0);
 	   border: 1px solid #221f1f;
 	   padding: 1px;
-
    }
 	#new_animal_details {
 		width: 564px;
@@ -515,7 +583,7 @@ a{
 	#form_spacer {
 		height: 143px;
 	}
-	#new_animal_done {
+	#new_animal_last_row {
 		width: 564px;
 		height: 57px;
 		margin-left: 13px;
@@ -531,52 +599,6 @@ a{
 		color:#f05d58;
 		text-align: center;
 	}
-	/* complex details add new form */
-	.new_complex_details_form{
-		width:564px;
-		height: 100%;
-		margin-left:11px;
-	}
-	.new_complex_details_form>section{
-		width:100%;
-		height: 78px;
-		font-family: gil_bold, arial, sans-serif;
-		font-size: 23px;
-		border-bottom: 1px solid #d7d7d8;
-		position: relative;
-	}
-	.new_complex_details_form>section:nth-child(1){
-		border-top: 1px solid #221f1f;
-	}
-	.new_complex_details_form>section>img{
-		width: 58px;
-		height: 58px;
-		position: absolute;
-		top:7px;
-		left: 13px;
-	}
-	.new_complex_details_form>section>p{
-		position: absolute;
-		top:31px;
-		left: 90px;
-	}
-	.new_complex_details_form>section>input{
-		position: absolute;
-	}
-	#submit_new_complex_details{
-		visibility: hidden;
-	}
-	#done_new_complex_details{
-		color:#f05d58;
-		text-align: center;
-	}
-	/*#new_animal_done input{*/
-		/*position: absolute;*/
-		/*width: 54px;*/
-		/*height: 17px;*/
-		/*top: 19px;*/
-		/*left: 255px;*/
-	/*}*/
 	#default_circle {
 		margin: 0 auto;
 		margin-top: 16px;
