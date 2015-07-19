@@ -17,17 +17,17 @@
 					<label> Name:  </label>
 					<input type="text" name="name" ng-model="animal.animalName">
 				</section>
-
 				<section class="form_row">
 					<img src="images/num2.png">
 					<label> Age: </label>
-					<input type="number" name="age" ng-model="animal.animalAge"> 
+					<input type="number" pu-elastic-input name="age" ng-model="animal.animalAge"> 
+					<p ng-hide="animal.animalAge==null">  years old </p>
 				</section>
-
 				<section class="form_row">
 					<img src="images/num3.png">
 					<label> Weight: </label>
-					<input type="number"  name="weight" ng-model="animal.animalWeight">
+					<input type="number" pu-elastic-input name="weight" ng-model="animal.animalWeight">
+					<p ng-hide="animal.animalWeight==null"> kg </p>
 				</section>
 				<section id="form_spacer"> </section>
 				<section id="new_animal_last_row">

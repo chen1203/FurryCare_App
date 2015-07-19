@@ -240,32 +240,36 @@ a{
 	.simple_detail_desc {	
 		width: 539px;
 	}
-	.simple_detail_desc>section {
-		position: absolute;
-		top: 38px;
+	.simple_detail_desc>section:nth-child(1) {
+		margin-top: 38px;
+		margin-left: 23px;
+	}
+	.simple_detail_desc>section>p,.simple_detail_desc>section>input {
+		float: left;
+	} 
+	.simple_detail_desc>section>p:nth-child(1) {
 		font-family: gil_bold,arial,sans-serif;
 		font-size: 23px;
 	}
-	.simple_detail_desc>section:nth-child(1) {
-		left: 23px;
+	.simple_detail_desc>section>p:nth-child(3),.simple_detail_desc>section>input {
+		font-family: gil,arial,sans-serif;
+		font-size: 23px;
 	}
-	/*.showAge {
-		width: 300px;
-		position: absolute;
-		top: 38px;
-		left: 78px;	
-	}*/
 	.simple_detail_desc>section input,.simple_detail_desc>section input:focus {
 		outline: 0;
 		border: 0px solid;
-		font-family: gil,arial,sans-serif;
-		font-size: 23px;
+		margin-left: 13px;
+	}
+	.simple_detail_desc>section>p:nth-child(3) {
+		margin-left: 8px;
 	}
 	#simple_detail_name_bold {
 		font-family: gil_bold,arial,sans-serif;
 		font-size: 23px;	
 	}
 	.simple_detail_desc>section:nth-child(2) {
+		position: absolute;
+		top: 38px;
 		color: #f05d58;
 		right: 23px;
 	}
@@ -483,7 +487,7 @@ a{
 		margin-left: 17px; 
 		font-family: gil_bold, arial, sans-serif;
 	}
-	.new_complex_details_form>section>input{
+	.new_complex_details_form>section>input,.new_complex_details_form>section>p{
 		margin-top: 31px;
 		font-family: gil, arial, sans-serif;
 		text-align: left
@@ -497,6 +501,10 @@ a{
 	.new_complex_details_form>section>input, .new_complex_details_form>section>input:focus{
 		outline: 0;
 		border: 0px solid;
+	}
+	.new_complex_details_form>section>p {
+		float: left;
+		margin-left: 10px;
 	}
 	.spacer_form_complex_detail {
 		height: 141px;
@@ -657,7 +665,7 @@ a{
 		margin-left: 13px;
 		border-bottom: 1px solid #d7d7d8;
 	}
-	.form_row img, .form_row input, .form_row label {
+	.form_row img, .form_row input, .form_row label, .form_row p {
 		float: left;
 	}
 	.form_row img {
@@ -677,9 +685,15 @@ a{
 		margin-top: 31px;
 		margin-left: 8px;
 		outline: 0;
-		border: 0px solid;
+		border: 0px solid;	
+	}
+	.form_row input,.form_row p {
 		font-family: gil,arial,sans-serif;
-		font-size: 23px;	
+		font-size: 23px;		
+	}
+	.form_row p {
+		margin-top: 31px;
+		margin-left: 8px;	
 	}
 	input[type=number]::-webkit-inner-spin-button, 
 	input[type=number]::-webkit-outer-spin-button { 

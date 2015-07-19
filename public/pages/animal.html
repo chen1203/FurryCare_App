@@ -19,11 +19,10 @@
 			<section> </section>
 		</section>
 		<section class="simple_detail_desc"> 
-			<section> Age : 
-				<input ng-readonly="!currAnimal.editage" ng-model="currAnimal.animalAge">
-				<!-- <section class="showAge" ng-hide="currAnimal.editage"> 		
-					{{currAnimal.animalAge}} years old
-				</section> -->
+			<section> 
+				<p> Age : </p>
+				<input type="number" pu-elastic-input ng-readonly="!currAnimal.editage" ng-model="currAnimal.animalAge">
+				<p ng-hide="currAnimal.animalAge==null"> years old </p>
 			</section> 
 			<section ng-if="isInEditMode('animalAge')" ng-click="doneEditClicked('animalAge')"> 
 				Done </section>
@@ -36,8 +35,10 @@
 			<section> </section>
 		</section>
 		<section class="simple_detail_desc"> 
-			<section> Weight :
-				<input ng-readonly="!currAnimal.editweight" ng-model="currAnimal.animalWeight">
+			<section>
+				<p> Weight : </p>
+				<input type="number" pu-elastic-input ng-readonly="!currAnimal.editweight" ng-model="currAnimal.animalWeight">
+				<p ng-hide="currAnimal.animalWeight==null"> kg </p>
 			</section> 
 			<section ng-if="isInEditMode('animalWeight')" ng-click="doneEditClicked('animalWeight')"> 	
 				Done </section>
@@ -179,19 +180,22 @@
 								<section>
 									<img src="images/num4.png">
 									<label> Bag Weight:  </label>
-									<input type="number" name="foodBagWeight" ng-model="food.foodBagWeight">
+									<input type="number" pu-elastic-input name="foodBagWeight" ng-model="food.		foodBagWeight">
+									<p> kg </p>
 									<div class="clear"></div>
 								</section>
 								<section>
 									<img src="images/num5.png">
 									<label> Bag Price:  </label>
-									<input type="number" name="foodBagPrice" ng-model="food.foodBagPrice">
+									<input type="number" pu-elastic-input name="foodBagPrice" ng-model="food.foodBagPrice">
+									<p> ₪ </p>
 									<div class="clear"></div>
 								</section>
 								<section>
 									<img src="images/num6.png">
 									<label> Daily Usage:  </label>
-									<input type="number" name="foodDailyUsage" ng-model="food.foodDailyUsage">
+									<input type="number" pu-elastic-input name="foodDailyUsage" ng-model="food.foodDailyUsage">
+									<p> gr </p>
 									<div class="clear"></div>
 								</section>
 								<section class="spacer_form_complex_detail"> </section>

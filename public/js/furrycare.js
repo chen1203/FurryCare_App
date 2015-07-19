@@ -1,4 +1,4 @@
-var furrycareApp = angular.module("furrycareApp",['ngCookies','ngRoute','ngAnimate']);
+var furrycareApp = angular.module("furrycareApp",['ngCookies','ngRoute','ngAnimate','puElasticInput']);
 
 furrycareApp.config(function($routeProvider){
       $routeProvider
@@ -145,7 +145,7 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
         // we will come back to animal page and the data won't be updated.
         // if we want he will be update we need to call : getUser (include inside the update)
         // if not, just updateCurrentAnimal
-        //$scope.updateCurrentAnimal("first");
+        $scope.updateCurrentAnimal("first");
 
         //$scope.user = $scope.getUser(); /// !!!! NEED TO THINK OF THAT
         $scope.newAnimalClicked = false;
