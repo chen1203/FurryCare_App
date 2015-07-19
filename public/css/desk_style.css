@@ -471,6 +471,155 @@ a{
 
 
 
+    /************************** NEW ANIMAL PAGE **************************/
+    #new_animal_page {
+        background-color: #e4e5e6;
+        min-height: 786px;
+        padding-top: 57px;
+    }
+    #new_animal {
+        width: 90%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border: 1px solid #221f1f;
+    }
+    #new_animal_title {
+        width: 100%;
+        height: 58px;
+        position: relative;
+    }
+    #new_animal_title>p {
+        position: absolute;
+        top: 23px;
+        left: 46%;
+        font-family: gil_bold,arial,sans-serif;
+        font-size: 23px;
+    }
+    #new_animal_pic {
+        width: 90%;
+        height: 169px;
+        position: relative;
+        margin: 0 auto;
+        border-bottom: 1px solid #221f1f;
+        border-top: 1px solid #221f1f;
+        -webkit-appearance:none;
+        box-shadow: none !important;
+    }
+    #new_animal_pic input {
+    }
+    #profileImage {
+        width: 128px;
+        height: 128px;
+        display: block;
+        position: absolute;
+        top: 21px;
+        left: 218px;
+        cursor: pointer;
+    }
+    .circlephoto {
+        border-radius:99px;
+        -moz-border-radius:99px;
+        -webkit-border-radius:99px;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        border: 1px solid #221f1f;
+        padding: 1px;
+    }
+    #new_animal_details {
+        width: 90%;
+        height: 62px;
+        margin: 0 auto;
+        border-bottom: 1px solid #221f1f;
+        position: relative;
+    }
+    #new_animal_details>p {
+        position: absolute;
+        bottom: 17px;
+        left: 14px;
+        font-family: gil_bold,arial,sans-serif;
+        font-size: 23px;
+    }
+    #new_animal_details>img {
+        display: block;
+        position: absolute;
+        /* This is the size ? ang right ? and small or edit ? */
+        width: 40px;
+        height: 36px;
+
+        bottom: 13px;
+        right: 10px;
+    }
+    #new_animal_form {
+        width: 90%;
+        height: 445px;
+        margin: 0 auto;
+    }
+    .form_row {
+        width: 90%;
+        height: 80px;
+        margin: 0 auto;
+        border-bottom: 1px solid #d7d7d8;
+    }
+    .form_row img, .form_row input, .form_row label {
+        float: left;
+    }
+    .form_row img {
+        display: block;
+        width: 59px;
+        height: 59px;
+        margin-top: 11px;
+        margin-left: 14px;
+    }
+    .form_row label {
+        margin-top: 31px;
+        margin-left: 19px;
+        font-family: gil_bold,arial,sans-serif;
+        font-size: 23px;
+    }
+    .form_row input {
+        margin-top: 31px;
+        margin-left: 8px;
+        outline: 0;
+        border: 0px solid;
+        font-family: gil,arial,sans-serif;
+        font-size: 23px;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    #form_spacer {
+        height: 143px;
+    }
+    #new_animal_last_row {
+        width: 564px;
+        height: 57px;
+        margin-left: 13px;
+        border-top: 1px solid #221f1f;
+        position: relative;
+    }
+    #submit_new_animal{
+        visibility: hidden;
+    }
+    #done_new_animal{
+        font-family: gil_bold, arial, sans-serif;
+        font-size: 23px;
+        color:#f05d58;
+        text-align: center;
+    }
+    #default_circle {
+        margin: 0 auto;
+        margin-top: 16px;
+        border-radius:99px;
+        background-color: #e7676d;
+        width: 60px;
+        height: 60px;
+    }
+
+
+
+
+
     /******************** NOTIFICARION PAGE *********************/
     #noti_page {
         background-color: #d1d2d3;

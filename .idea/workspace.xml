@@ -75,18 +75,18 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.310345" vertical-offset="12701" max-vertical-offset="13090">
-              <caret line="763" column="1" selection-start-line="652" selection-start-column="4" selection-end-line="763" selection-end-column="1" />
+            <state vertical-scroll-proportion="-4.62069" vertical-offset="10916" max-vertical-offset="13090">
+              <caret line="650" column="5" selection-start-line="507" selection-start-column="0" selection-end-line="650" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="desk_style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="desk_style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="9663" max-vertical-offset="10081">
-              <caret line="587" column="0" selection-start-line="587" selection-start-column="0" selection-end-line="587" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5933014" vertical-offset="9408" max-vertical-offset="12614">
+              <caret line="568" column="25" selection-start-line="568" selection-start-column="25" selection-end-line="568" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -112,10 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_animal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new_animal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/pages/new_animal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53571427" vertical-offset="283" max-vertical-offset="765">
+            <state vertical-scroll-proportion="-8.076923" vertical-offset="283" max-vertical-offset="765">
               <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
@@ -137,8 +137,8 @@
         <option value="$PROJECT_DIR$/public/pages/animal.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/public/css/desk_style.css" />
         <option value="$PROJECT_DIR$/public/pages/new_animal.html" />
+        <option value="$PROJECT_DIR$/public/css/desk_style.css" />
       </list>
     </option>
   </component>
@@ -559,22 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.310345" vertical-offset="12701" max-vertical-offset="13090">
-          <caret line="763" column="1" selection-start-line="652" selection-start-column="4" selection-end-line="763" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9663" max-vertical-offset="10081">
-          <caret line="587" column="0" selection-start-line="587" selection-start-column="0" selection-end-line="587" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/pages/animal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.730769" vertical-offset="3094" max-vertical-offset="5525">
@@ -593,8 +577,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/pages/new_animal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53571427" vertical-offset="283" max-vertical-offset="765">
+        <state vertical-scroll-proportion="-8.076923" vertical-offset="283" max-vertical-offset="765">
           <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.62069" vertical-offset="10916" max-vertical-offset="13090">
+          <caret line="650" column="5" selection-start-line="507" selection-start-column="0" selection-end-line="650" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5933014" vertical-offset="9408" max-vertical-offset="12614">
+          <caret line="568" column="25" selection-start-line="568" selection-start-column="25" selection-end-line="568" selection-end-column="25" />
           <folding />
         </state>
       </provider>
