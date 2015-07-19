@@ -359,9 +359,9 @@ a{
     }
     /* complex details add new form */
     .new_complex_details_form{
-        width:564px;
+        width:90%;
         height: 100%;
-        margin-left:11px;
+        margin:0 auto;
     }
     .new_complex_details_form>section{
         width:100%;
@@ -369,9 +369,6 @@ a{
         font-family: gil_bold, arial, sans-serif;
         font-size: 23px;
         border-bottom: 1px solid #d7d7d8;
-    }
-    .new_complex_details_form>section:nth-child(1){
-        border-top: 1px solid #221f1f;
     }
     .new_complex_details_form>section>img{
         width: 58px;
@@ -408,21 +405,21 @@ a{
         height: 141px;
     }
     .new_complex_details_last_row {
-        width: 564px;
-        height: 57px;
         border-top: 1px solid #221f1f;
         position: relative;
+        cursor: pointer;
     }
     #submit_new_vacc, #submit_new_food, #submit_new_care{
         visibility: hidden;
     }
     #done_new_vacc, #done_new_food, #done_new_care{
+        width: 100%;
         position: absolute;
         top: 19px;
-        left: 253px;
         font-family: gil_bold, arial, sans-serif;
         font-size: 23px;
         color:#f05d58;
+        text-align: center;
     }
     input[type=date]::-webkit-inner-spin-button,
     input[type=date]::-webkit-outer-spin-button {
