@@ -23,6 +23,7 @@
 				<p> Age : </p>
 				<input type="number" pu-elastic-input ng-readonly="!currAnimal.editage" ng-model="currAnimal.animalAge">
 				<p ng-hide="currAnimal.animalAge==null"> years old </p>
+				<div class="clear"></div>
 			</section> 
 			<section ng-if="isInEditMode('animalAge')" ng-click="doneEditClicked('animalAge')"> 
 				Done </section>
@@ -39,6 +40,7 @@
 				<p> Weight : </p>
 				<input type="number" pu-elastic-input ng-readonly="!currAnimal.editweight" ng-model="currAnimal.animalWeight">
 				<p ng-hide="currAnimal.animalWeight==null"> kg </p>
+				<div class="clear"></div>
 			</section> 
 			<section ng-if="isInEditMode('animalWeight')" ng-click="doneEditClicked('animalWeight')"> 	
 				Done </section>
