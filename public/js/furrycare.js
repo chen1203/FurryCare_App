@@ -1,4 +1,4 @@
-var furrycareApp = angular.module("furrycareApp",['ngCookies','ngRoute']);
+var furrycareApp = angular.module("furrycareApp",['ngCookies','ngRoute','ngAnimate']);
 
 furrycareApp.config(function($routeProvider){
       $routeProvider

@@ -55,7 +55,7 @@
 			    	<section> Vaccination </section>
 			    </li>
 			    <ng-switch on="vaccItemOpen()">
-			    	<section ng-switch-when="true">
+			    	<section ng-switch-when="true" class="animate">
 					    <section class="imp_detail_not_exist" ng-show="addVaccState() || !findMostImportantItem('vacc')">
 					    	<img src="../images/vaccination.png">
 					    </section>
@@ -137,7 +137,7 @@
 			    	<section> Food </section>
 			    </li>
 			    <ng-switch on="foodItemOpen()">
-			    	<section ng-switch-when="true">
+			    	<section ng-switch-when="true" class="animate">
 					     <section class="imp_detail_not_exist" ng-show="addFoodState() || !findMostImportantItem('food')">
 					    	<img src="../images/food.png">
 					    </section>
@@ -245,7 +245,7 @@
 			    	<section> Care </section>
 			    </li>
 			    <ng-switch on="careItemOpen()">
-			    	<section ng-switch-when="true">
+			    	<section ng-switch-when="true" class="animate">
 					     <section class="imp_detail_not_exist" ng-show="addCareState() || !findMostImportantItem('care')">
 					    	<img src="../images/care.png">
 					    </section>

@@ -1,4 +1,4 @@
-/************************** LOGIN PAGE **************************/
+
 * {
 	margin:0;
 	padding:0;	
@@ -24,6 +24,30 @@ a{
 .clear {
 	clear: both;
 }
+/*for animation*/
+.animate.ng-enter{
+	max-height:0;
+	opacity: 0;
+	-webkit-transition:all linear 0.5s;
+	-moz-transition:all linear 0.5s;
+	-o-transition:all linear 0.5s;
+	transition: all linear 0.5s;
+}
+.animate.ng-leave{
+	-webkit-transition:all linear 0.5s;
+	-moz-transition:all linear 0.5s;
+	-o-transition:all linear 0.5s;
+	transition: all linear 0.5s;
+}
+.animate.ng-enter.ng-enter-active,.animate.ng-leave {
+	max-height: 1200px;
+	opacity: 1;
+}
+.animate.ng-leave.ng-leave-active{
+	max-height:0;
+	opacity: 0;
+}
+
 
 @media all and (max-width: 599px){
 	.visible_in_desktop_only{

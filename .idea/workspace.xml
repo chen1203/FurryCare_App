@@ -25,50 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="furrycare.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="9282" max-vertical-offset="14059">
-              <caret line="546" column="6" selection-start-line="546" selection-start-column="6" selection-end-line="546" selection-end-column="6" />
-              <folding>
-                <marker date="1437298927128" expanded="true" signature="23184:23196" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="23228:23514" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="23244:23472" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="23249:23387" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="23994:24157" placeholder="{&quot;withCredentials&quot;: true...}" />
-                <marker date="1437298927128" expanded="true" signature="24183:25228" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="24880:24915" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="24958:25017" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="25303:25402" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="25588:25989" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="25683:25765" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="25817:25952" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="29761:29790" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="30064:30101" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="31865:32178" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="31845:31944" placeholder="{&quot;vaccName&quot;: ''...}" />
-                <marker date="1437298927128" expanded="true" signature="32488:32787" placeholder="{...}" />
-                <marker date="1437298927128" expanded="true" signature="32629:32744" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.034483" vertical-offset="1020" max-vertical-offset="13600">
-              <caret line="72" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="desk_style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7377892" vertical-offset="12820" max-vertical-offset="13906">
-              <caret line="771" column="5" selection-start-line="771" selection-start-column="5" selection-end-line="771" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.21356784" vertical-offset="408" max-vertical-offset="14008">
+              <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -77,18 +38,18 @@
       <file leaf-file-name="animal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/pages/animal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3451" max-vertical-offset="5899">
-              <caret line="224" column="4" selection-start-line="224" selection-start-column="4" selection-end-line="224" selection-end-column="4" />
+            <state vertical-scroll-proportion="-2.3090909" vertical-offset="1658" max-vertical-offset="5678">
+              <caret line="105" column="86" selection-start-line="105" selection-start-column="86" selection-end-line="105" selection-end-column="86" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
+      <file leaf-file-name="desk_style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1632">
-              <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="13923">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -115,12 +76,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/js/furrycare.js" />
-        <option value="$PROJECT_DIR$/public/pages/animal.html" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/pages/new_animal.html" />
         <option value="$PROJECT_DIR$/public/css/desk_style.css" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/js/furrycare.js" />
+        <option value="$PROJECT_DIR$/public/pages/animal.html" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -129,8 +90,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-46" />
+    <option name="y" value="183" />
     <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
@@ -239,6 +200,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FurryCare_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FurryCare_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -271,6 +254,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom\Documents\GitHub\FurryCare_App\public\js\lib\angular" />
       <recent name="C:\Users\Tom\Documents\GitHub\FurryCare_App\public\css" />
     </key>
   </component>
@@ -289,15 +273,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -313,29 +297,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-46" y="183" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11453745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2092511" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2976378" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -361,28 +345,57 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9282" max-vertical-offset="13957">
+          <caret line="546" column="6" selection-start-line="546" selection-start-column="6" selection-end-line="546" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="13617">
+          <caret line="72" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14280">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/animal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3451" max-vertical-offset="5899">
+          <caret line="224" column="4" selection-start-line="224" selection-start-column="4" selection-end-line="224" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="1649">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/new_animal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="765">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="8313" max-vertical-offset="13107">
           <caret line="489" column="6" selection-start-line="489" selection-start-column="6" selection-end-line="489" selection-end-column="6" />
-          <folding>
-            <marker date="1437298927128" expanded="true" signature="23184:23196" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23228:23514" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23244:23472" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23249:23387" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23994:24157" placeholder="{&quot;withCredentials&quot;: true...}" />
-            <marker date="1437298927128" expanded="true" signature="24183:25228" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="24880:24915" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="24958:25017" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25303:25402" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25588:25989" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25683:25765" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25817:25952" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="29761:29790" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="30064:30101" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="31865:32178" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="31845:31944" placeholder="{&quot;vaccName&quot;: ''...}" />
-            <marker date="1437298927128" expanded="true" signature="32488:32787" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="32629:32744" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -430,26 +443,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="8704" max-vertical-offset="12767">
           <caret line="512" column="6" selection-start-line="512" selection-start-column="6" selection-end-line="512" selection-end-column="6" />
-          <folding>
-            <marker date="1437298927128" expanded="true" signature="23184:23196" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23228:23514" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23244:23472" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23249:23387" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23994:24157" placeholder="{&quot;withCredentials&quot;: true...}" />
-            <marker date="1437298927128" expanded="true" signature="24183:25228" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="24880:24915" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="24958:25017" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25303:25402" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25588:25989" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25683:25765" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25817:25952" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="29761:29790" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="30064:30101" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="31865:32178" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="31845:31944" placeholder="{&quot;vaccName&quot;: ''...}" />
-            <marker date="1437298927128" expanded="true" signature="32488:32787" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="32629:32744" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -481,26 +475,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12172">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1437298927128" expanded="true" signature="23184:23196" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23228:23514" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23244:23472" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23249:23387" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23994:24157" placeholder="{&quot;withCredentials&quot;: true...}" />
-            <marker date="1437298927128" expanded="true" signature="24183:25228" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="24880:24915" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="24958:25017" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25303:25402" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25588:25989" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25683:25765" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25817:25952" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="29761:29790" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="30064:30101" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="31865:32178" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="31845:31944" placeholder="{&quot;vaccName&quot;: ''...}" />
-            <marker date="1437298927128" expanded="true" signature="32488:32787" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="32629:32744" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -519,53 +494,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9282" max-vertical-offset="14059">
-          <caret line="546" column="6" selection-start-line="546" selection-start-column="6" selection-end-line="546" selection-end-column="6" />
-          <folding>
-            <marker date="1437298927128" expanded="true" signature="23184:23196" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23228:23514" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23244:23472" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23249:23387" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="23994:24157" placeholder="{&quot;withCredentials&quot;: true...}" />
-            <marker date="1437298927128" expanded="true" signature="24183:25228" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="24880:24915" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="24958:25017" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25303:25402" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25588:25989" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25683:25765" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="25817:25952" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="29761:29790" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="30064:30101" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="31865:32178" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="31845:31944" placeholder="{&quot;vaccName&quot;: ''...}" />
-            <marker date="1437298927128" expanded="true" signature="32488:32787" placeholder="{...}" />
-            <marker date="1437298927128" expanded="true" signature="32629:32744" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52040815" vertical-offset="510" max-vertical-offset="1632">
           <caret line="42" column="90" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pages/animal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3451" max-vertical-offset="5899">
-          <caret line="224" column="4" selection-start-line="224" selection-start-column="4" selection-end-line="224" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1632">
-          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -577,18 +509,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+    <entry file="file://$USER_HOME$/Desktop/FurryCare_App/public/css/desk_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.034483" vertical-offset="1020" max-vertical-offset="13600">
-          <caret line="72" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.36856368" vertical-offset="340" max-vertical-offset="14280">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="3" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59408605" vertical-offset="0" max-vertical-offset="1649">
+          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/FurryCare_App/public/js/furrycare.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13957">
+          <caret line="0" column="81" selection-start-line="0" selection-start-column="72" selection-end-line="0" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.722078" vertical-offset="816" max-vertical-offset="14467">
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7377892" vertical-offset="12820" max-vertical-offset="13906">
-          <caret line="771" column="5" selection-start-line="771" selection-start-column="5" selection-end-line="771" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="13923">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/animal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3090909" vertical-offset="1658" max-vertical-offset="5678">
+          <caret line="105" column="86" selection-start-line="105" selection-start-column="86" selection-end-line="105" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/FurryCare_App/public/pages/animal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14206128" vertical-offset="918" max-vertical-offset="5899">
+          <caret line="57" column="66" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21356784" vertical-offset="408" max-vertical-offset="14008">
+          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
           <folding />
         </state>
       </provider>
