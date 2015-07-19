@@ -50,46 +50,46 @@
 			<!-- vaccination details on the current animal -->
 			<ul>
 			    <li class="scroll_list_title" ng-class="{'open_scroll_list': vaccItemOpen()}">
-			    	<section> <img src="../images/vaccination_small.png" ng-click="closeVaccList()">
+			    	<section> <img src="images/vaccination_small.png" ng-click="closeVaccList()">
 			    	</section>
 			    	<section> Vaccination </section>
 			    </li>
 			    <ng-switch on="vaccItemOpen()">
 			    	<section ng-switch-when="true" class="animate">
 					    <section class="imp_detail_not_exist" ng-show="addVaccState() || !findMostImportantItem('vacc')">
-					    	<img src="../images/vaccination.png">
+					    	<img src="images/vaccination.png">
 					    </section>
 					    <section class="most_imp_detail" ng-show="!addVaccState() && findMostImportantItem('vacc')">
-					    	<img src="../images/vaccination.png">
+					    	<img src="images/vaccination.png">
 					    	<p> {{impVacc.vaccName}} </p>
 					    	<p> {{getMessage1('vaccination')}} </p>
 					    	<p> {{getMessage2('vaccination')}} </p>
 					    </section>
 					    <section class="sub_title_complex_details" ng-hide="addVaccState()">
 					    	<p> All </p>
-					    	<img src="../images/add_small.png" ng-click="addVaccClicked()">
+					    	<img src="images/add_small.png" ng-click="addVaccClicked()">
 					    </section>
 					     <section class="sub_title_complex_details" ng-hide="!addVaccState()">
 					    	<p> Details </p>
-					    	<img src="../images/edit_small.png">
+					    	<img src="images/edit_small.png">
 					    </section>
 					     <!-- new vaccination form will be displayed if the list is empty-->
 						<section ng-hide="!addVaccState()">
 							<form class="new_complex_details_form" ng-submit="createVacc()"> 
 								<section>
-									<img src="../images/num1.png">
+									<img src="images/num1.png">
 									<label> Name:  </label>
 									<input type="text" name="vaccName" ng-model="vacc.vaccName">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num2.png"> 
+									<img src="images/num2.png"> 
 									<label> Received:  </label>
 									<input type="date" name="vaccDate" ng-model="vacc.vaccDate">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num3.png">
+									<img src="images/num3.png">
 									<label> Expired:  </label>
 									<input type="date" name="vaccExp" ng-model="vacc.vaccExp">
 									<div class="clear"></div>
@@ -105,13 +105,13 @@
 				       	<section ng-repeat="vacc in currAnimal.animalVaccination | orderBy: vaccOrder" 
 				    		 	ng-hide="addVaccState()" class="scroll_list_item_close"
 				    		 	ng-class="{'no_border' : $first}" ng-click="vaccItemClicked(vacc)">
-					       	<img src="../images/vaccination.png">
+					       	<img src="images/vaccination.png">
 					       	<p> {{vacc.vaccName}} </p>				       		
 			       			<p ng-class="{'time_left_align' : vacc.vaccItemClickedVar,
 			       						  'time_left' : !vacc.vaccItemClickedVar}"> 
 			       					{{calcTimeLeftWithTwoDates(vacc.vaccDate,vacc.vaccExp)}} </p>
 				       		<section class="scroll_list_delete_item" ng-hide="!vacc.vaccItemClickedVar"> 
-			       				<img src="../images/trash.png" ng-click="deleteItemComplexDetail('vacc',vacc._id)">
+			       				<img src="images/trash.png" ng-click="deleteItemComplexDetail('vacc',vacc._id)">
 			       			</section>
 			       		</section>
 				       		<!-- open it when clicked on the item -->
@@ -132,64 +132,64 @@
 			<!-- food details on the current animal -->
 			<ul>
 			    <li class="scroll_list_title" ng-class="{'open_scroll_list': foodItemOpen()}">
-			    	<section> <img src="../images/food_small.png">
+			    	<section> <img src="images/food_small.png" ng-click="closeFoodList()">
 			    	</section>
 			    	<section> Food </section>
 			    </li>
 			    <ng-switch on="foodItemOpen()">
 			    	<section ng-switch-when="true" class="animate">
 					     <section class="imp_detail_not_exist" ng-show="addFoodState() || !findMostImportantItem('food')">
-					    	<img src="../images/food.png">
+					    	<img src="images/food.png">
 					    </section>
 					    <section class="most_imp_detail" ng-show="!addFoodState() && findMostImportantItem('food')">
-					    	<img src="../images/food.png">
+					    	<img src="images/food.png">
 					    	<p> {{impFood.foodName}} </p>
 					    	<p> {{getMessage1('food')}} </p>
 					    	<p> {{getMessage2('food')}} </p>
 					    </section>
 					    <section class="sub_title_complex_details" ng-hide="addFoodState()">
 					    	<p> All </p>
-					    	<img src="../images/add_small.png" ng-click="addFoodClicked()">
+					    	<img src="images/add_small.png" ng-click="addFoodClicked()">
 					    </section>
 					     <section class="sub_title_complex_details" ng-hide="!addFoodState()">
 					    	<p> Details </p>
-					    	<img src="../images/edit_small.png">
+					    	<img src="images/edit_small.png">
 					    </section>	
 					     <!-- new food form will be displayed if the list is empty-->
 						<section ng-hide="!addFoodState()">
 							<form class="new_complex_details_form" ng-submit="createFood()">
 								<section>
-									<img src="../images/num1.png">
+									<img src="images/num1.png">
 									<label> Name:  </label>
 									<input type="text" name="foodName" ng-model="food.foodName">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num2.png">
+									<img src="images/num2.png">
 									<label> Date the food bought:  </label>
 									<input type="date" name="foodDate" ng-model="food.foodDate">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num3.png">
+									<img src="images/num3.png">
 									<label> Brand:  </label>
 									<input type="text" name="foodBrand" ng-model="food.foodBrand">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num4.png">
+									<img src="images/num4.png">
 									<label> Bag Weight:  </label>
 									<input type="number" name="foodBagWeight" ng-model="food.foodBagWeight">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num5.png">
+									<img src="images/num5.png">
 									<label> Bag Price:  </label>
 									<input type="number" name="foodBagPrice" ng-model="food.foodBagPrice">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num6.png">
+									<img src="images/num6.png">
 									<label> Daily Usage:  </label>
 									<input type="number" name="foodDailyUsage" ng-model="food.foodDailyUsage">
 									<div class="clear"></div>
@@ -205,13 +205,13 @@
        					<section ng-repeat="food in currAnimal.animalFood | orderBy: foodOrder"
     		 				  ng-hide="addFoodState()" class="scroll_list_item_close" 
     		 				  ng-class="{'no_border' : $first}" ng-click="foodItemClicked(food)">
-       						<img src="../images/food.png">
+       						<img src="images/food.png">
        						<p> {{food.foodName}} </p>
        						<p ng-class="{'time_left_align' : food.foodItemClickedVar,
    										  'time_left' : !food.foodItemClickedVar}">
        		 						{{calcTimeLeftForFood(food)}} </p>
        						<section class="scroll_list_delete_item" ng-hide="!food.foodItemClickedVar"> 
-   								<img src="../images/trash.png" ng-click="deleteItemComplexDetail('food',food._id)">
+   								<img src="images/trash.png" ng-click="deleteItemComplexDetail('food',food._id)">
    							</section>	
    						</section> 
    						<!-- open it when clicked on the item -->
@@ -240,46 +240,46 @@
 			<!-- care details on the current animal -->
 			<ul>
 			    <li class="scroll_list_title" ng-class="{'open_scroll_list': careItemOpen()}">
-			    	<section> <img src="../images/care_small.png">
+			    	<section> <img src="images/care_small.png" ng-click="closeCareList()">
 			    	</section>
 			    	<section> Care </section>
 			    </li>
 			    <ng-switch on="careItemOpen()">
 			    	<section ng-switch-when="true" class="animate">
 					     <section class="imp_detail_not_exist" ng-show="addCareState() || !findMostImportantItem('care')">
-					    	<img src="../images/care.png">
+					    	<img src="images/care.png">
 					    </section>
 					    <section class="most_imp_detail" ng-show="!addCareState() && findMostImportantItem('care')">
-					    	<img src="../images/care.png">
+					    	<img src="images/care.png">
 					    	<p> {{impCare.careType}} </p>
 					    	<p> {{getMessage1('care')}} </p>
 					    	<p> {{getMessage2('care')}} </p>
 					    </section>
 					    <section class="sub_title_complex_details" ng-hide="addCareState()">
 					    	<p> All </p>
-					    	<img src="../images/add_small.png" ng-click="addCareClicked()">
+					    	<img src="images/add_small.png" ng-click="addCareClicked()">
 					    </section>
 					     <section class="sub_title_complex_details" ng-hide="!addCareState()">
 					    	<p> Details </p>
-					    	<img src="../images/edit_small.png">
+					    	<img src="images/edit_small.png">
 					    </section>
 					     <!-- new care form will be displayed if the list is empty-->
 						<section ng-hide="!addCareState()">
 							<form class="new_complex_details_form" ng-submit="createCare()">
 								<section>
-									<img src="../images/num1.png">
+									<img src="images/num1.png">
 									<label> Type:  </label>
 									<input type="text" name="careType" ng-model="care.careType">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num2.png">
+									<img src="images/num2.png">
 									<label> Received:  </label>
 									<input type="date" name="careDate" ng-model="care.careDate">
 									<div class="clear"></div>
 								</section>
 								<section>
-									<img src="../images/num3.png">
+									<img src="images/num3.png">
 									<label> Expired:  </label>
 									<input type="date" name="careExp" ng-model="care.careExp">
 									<div class="clear"></div>
@@ -295,13 +295,13 @@
 				       	<section ng-repeat="care in currAnimal.animalCare | orderBy: careOrder"
 					    		 ng-hide="addCareState()" class="scroll_list_item_close" 
 					    		 ng-class="{'no_border' : $first}" ng-click="careItemClicked(care)">
-				       		<img src="../images/care.png">
+				       		<img src="images/care.png">
 			       			<p> {{care.careType}} </p>
 			       			<p ng-class="{'time_left_align' : care.careItemClickedVar,
 										  'time_left' : !care.careItemClickedVar}">
 								 	{{calcTimeLeftWithTwoDates(care.careDate,care.careExp)}} </p>
 				       		<section class="scroll_list_delete_item" ng-hide="!care.careItemClickedVar"> 
-								<img src="../images/trash.png" ng-click="deleteItemComplexDetail('care',care._id)">
+								<img src="images/trash.png" ng-click="deleteItemComplexDetail('care',care._id)">
 							</section>
 						</section>
    						<!-- open it when clicked on the item -->
@@ -322,7 +322,7 @@
 		</section>
 
 		<section id="delete_animal"> 
-			<img src="../images/trash.png" ng-click="deleteAnimal()">
+			<img src="images/trash.png" ng-click="deleteAnimal()">
 		</section>
 
 </section>

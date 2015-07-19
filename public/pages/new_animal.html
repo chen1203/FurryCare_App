@@ -4,28 +4,28 @@
 		<section id="new_animal_pic">
 			<input type='file' id="imgInp" multiple accept='image/*'
 					   onchange="angular.element(this).scope().uploadFile(this.files)" style="display:none">
-			<img id="profileImage" ng-src="../images/profileImg.png" alt="profileImage" class="circlephoto">
+			<img id="profileImage" ng-src="images/profileImg.png" alt="profileImage" class="circlephoto">
 		</section>
 		<section id="new_animal_details"> 
 			<p> Details </p> 
-			<img src="../images/edit.png">
+			<img src="images/edit.png">
 		</section>
 		<section id="new_animal_form"> 
 			<form ng-submit="checkIfAddAnimalAvailable()">
 				<section class="form_row">
-					<img src="../images/num1.png">
+					<img src="images/num1.png">
 					<label> Name:  </label>
 					<input type="text" name="name" ng-model="animal.animalName">
 				</section>
 
 				<section class="form_row">
-					<img src="../images/num2.png">
+					<img src="images/num2.png">
 					<label> Age: </label>
 					<input type="number" name="age" ng-model="animal.animalAge"> 
 				</section>
 
 				<section class="form_row">
-					<img src="../images/num3.png">
+					<img src="images/num3.png">
 					<label> Weight: </label>
 					<input type="number"  name="weight" ng-model="animal.animalWeight">
 				</section>
