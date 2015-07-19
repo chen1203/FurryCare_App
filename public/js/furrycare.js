@@ -570,6 +570,8 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
       }
     };
 
+
+
 }]); 
 
 furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
@@ -646,11 +648,17 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
             return $scope.calcReturnTimeFromOneDate(exp,currentDate);
         }
     };
-    $scope.calcTimeLeftForFood = function(food) {
+    $scope.calcExpireDateForFood = function(food) {
         var daysleft = (food.foodBagWeight * 1000) / food.foodDailyUsage;  
         var dateToExp = new Date(food.foodDate);
-        dateToExp.setDate(dateToExp.getDate() + daysleft); 
-        return $scope.calcTimeLeftWithTwoDates(food.foodDate,dateToExp); 
+        dateToExp.setDate(dateToExp.getDate() + daysleft);  
+        return dateToExp;
+    };
+    $scope.calcTimeLeftForFood = function(food) {
+       /* var daysleft = (food.foodBagWeight * 1000) / food.foodDailyUsage;  
+        var dateToExp = new Date(food.foodDate);
+        dateToExp.setDate(dateToExp.getDate() + daysleft); */
+        return $scope.calcTimeLeftWithTwoDates(food.foodDate,$scope.calcExpireDateForFood(food)); 
     };
     $scope.calcTimeForNoti = function(notiReceivedDate,notiExpiredDate) {
         return $scope.calcTimeLeftWithTwoDates(notiReceivedDate,notiExpiredDate);
@@ -705,42 +713,96 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
     $scope.notiOrder = function(noti) {
         return $scope.closestDate(noti.notiReceivedDate,noti.notiExpiredDate);
     };
-
-    $scope.checkClosestVacc = function() {
-
-        var vaccArr = [];
-        angular.forEach($scope.$parent.currAnimal.animalVaccination, function(vacc) {
-            var vaccObj = {
-                vaccName: '',
-                closestDate: '' 
-            };
-            vaccObj.vaccName = vacc.vaccName;
-            vaccObj.closestDate = new Date($scope.closestDate(vacc.vaccDate,vacc.vaccExp));
-            vaccArr.push(vaccObj);
-
-        });
-        console.log(vaccArr);
-        var datesArr = $filter('orderBy')(vaccArr,'closestDate');
-
-        console.log("$$$$$$$$$$$$: "+datesArr[0].vaccName);
-
+    $scope.createObjArrWithClosestDate = function(category) {
+        if (category == "vacc") {
+            var vaccArr = [];
+            angular.forEach($scope.$parent.currAnimal.animalVaccination, function(vacc) {
+                var vaccObj = {
+                    vaccName: '',
+                    closestDate: '' 
+                };
+                vaccObj.vaccName = vacc.vaccName;
+                vaccObj.closestDate = new Date($scope.closestDate(vacc.vaccDate,vacc.vaccExp));
+                vaccArr.push(vaccObj);
+            });
+            return vaccArr;
+        }
+        if (category == "food") {
+            var foodArr = [];
+            angular.forEach($scope.$parent.currAnimal.animalFood, function(food) {
+                var foodObj = {
+                    foodName: '',
+                    closestDate: '' 
+                };
+                foodObj.foodName = food.foodName;
+                foodObj.closestDate = new Date($scope.closestDate(food.foodDate,$scope.calcExpireDateForFood(food)));
+                foodArr.push(foodObj);
+            });
+            return foodArr;
+        }
+        if (category == "care") {
+            var careArr = [];
+            angular.forEach($scope.$parent.currAnimal.animalCare, function(care) {
+                var careObj = {
+                    careType: '',
+                    closestDate: '' 
+                };
+                careObj.careType = care.careType;
+                careObj.closestDate = new Date($scope.closestDate(care.careDate,care.careExp));
+                careArr.push(careObj);
+            });
+            return careArr;    
+        }
+    };
+    $scope.saveImpObjOnScope = function(category,obj) {
+        if (category == "vacc") {
+            $scope.impVacc = obj;
+            console.log("imp vacc name: "+$scope.impVacc.vaccName);
+        } else if (category == "food") {
+            $scope.impFood = obj;
+            console.log("imp food name: "+$scope.impFood.foodName);
+        } else if (category == "care") {
+            $scope.impCare = obj;
+            console.log("imp care type: "+$scope.impCare.careType);
+        }
+    };
+    $scope.findMostImportantItem = function(category) {
+        var objArr = $scope.createObjArrWithClosestDate(category);
+        console.log(objArr);
+        var datesArr = $filter('orderBy')(objArr,'closestDate');
         var currentDate = new Date();
         currentDate.setHours(0,0,0,0);
         var found = 0;
-        angular.forEach(datesArr, function(vacc) {
-            var date = new Date(vacc.closestDate);
+        angular.forEach(datesArr, function(obj) {
+            var date = new Date(obj.closestDate);
             date.setHours(0,0,0,0);
             var timeDiff = date.getTime() - currentDate.getTime(); 
-            if (timeDiff >= 0 && found == 0) {// if (vacc is bigger than today)
+            //console.log(timeDiff);
+            if (timeDiff >= 0 && found == 0) {
                 found = 1;
-                var impVacc = vacc;
-                console.log("found imp vacc : "+impVacc.vaccName);
-                return;    
+                $scope.saveImpObjOnScope(category,obj);
             }
         });
-
+        return found;
     };
 
+     $scope.getMessage1 = function(category) {
+        if (category == "vaccination")
+            return "Vaccine about to expire!";
+        if (category == "food")
+            return "Is running out";
+        if (category == "care")
+            return "The summer is comming";
+    };
+    $scope.getMessage2 = function(category) {
+        if (category == "vaccination")
+            return "";
+        if (category == "food")
+            return "It's time for a new one!";
+        if (category == "care")
+            return "It's time for an haircut!";    
+        
+    };
 
 });
 

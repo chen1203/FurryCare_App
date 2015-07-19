@@ -57,12 +57,15 @@
 			    <ng-switch on="vaccItemOpen()">
 			    	<section ng-switch-when="true">
 					    
-					    <section class="imp_detail_not_exist" ng-hide="!addVaccState()">
+					    <section class="imp_detail_not_exist" ng-show="addVaccState() || findMostImportantItem('vacc')==0">
 					    	<img src="../images/vaccination.png">
 					    </section>
 
-					    <section class="most_imp_detail" ng-hide="addVaccState()">
-					    	<img src="../images/vaccination.png" ng-click="checkClosestVacc()">
+					    <section class="most_imp_detail" ng-show="!addVaccState() && findMostImportantItem('vacc')==1">
+					    	<img src="../images/vaccination.png">
+					    	<p> {{impVacc.vaccName}} </p>
+					    	<p> {{getMessage1('vaccination')}} </p>
+					    	<p> {{getMessage2('vaccination')}} </p>
 					    </section>
 
 					    <section class="sub_title_complex_details" ng-hide="addVaccState()">
@@ -139,9 +142,19 @@
 			    </li>
 			    <ng-switch on="foodItemOpen()">
 			    	<section ng-switch-when="true">
-					    <section class="most_imp_detail">
+
+					     <section class="imp_detail_not_exist" ng-show="addFoodState() || findMostImportantItem('food')==0">
 					    	<img src="../images/food.png">
 					    </section>
+
+					    <section class="most_imp_detail" ng-show="!addFoodState() && findMostImportantItem('food')==1">
+					    	<img src="../images/food.png">
+					    	<p> {{impFood.foodName}} </p>
+					    	<p> {{getMessage1('food')}} </p>
+					    	<p> {{getMessage2('food')}} </p>
+					    </section>
+
+
 					    <section class="sub_title_complex_details" ng-hide="addFoodState()">
 					    	<p> All </p>
 					    	<img src="../images/add_small.png" ng-click="addFoodClicked()">
@@ -242,9 +255,18 @@
 			    </li>
 			    <ng-switch on="careItemOpen()">
 			    	<section ng-switch-when="true">
-					    <section class="most_imp_detail">
+					
+					     <section class="imp_detail_not_exist" ng-show="addCareState() || findMostImportantItem('care')==0">
 					    	<img src="../images/care.png">
 					    </section>
+
+					    <section class="most_imp_detail" ng-show="!addCareState() && findMostImportantItem('care')==1">
+					    	<img src="../images/care.png">
+					    	<p> {{impCare.careType}} </p>
+					    	<p> {{getMessage1('care')}} </p>
+					    	<p> {{getMessage2('care')}} </p>
+					    </section>
+
 					    <section class="sub_title_complex_details" ng-hide="addCareState()">
 					    	<p> All </p>
 					    	<img src="../images/add_small.png" ng-click="addCareClicked()">
