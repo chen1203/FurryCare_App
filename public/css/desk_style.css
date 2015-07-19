@@ -40,6 +40,7 @@ a{
         position: absolute;
         top: 15px;
         left: 30px;
+        cursor: pointer;
     }
     .visible_in_desktop_only>h2{
         font-family: gil_bold;
@@ -53,7 +54,6 @@ a{
         position: absolute;
         top: 50px;
         right:50px;
-
     }
     #main_nav ul li {
         float: left;
@@ -243,6 +243,7 @@ a{
         width: 59px;
         left: 29px;
         top: 12px;
+        cursor: pointer;
     }
     .scroll_list_title>section:nth-child(1)>img{
         width: 59px;
