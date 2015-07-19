@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width">
       <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/desk_style.css">
       <script src="js/lib/Jquery/jquery-1.11.3.min.js"> </script>
       <script src="js/lib/angular/angular.min.js"> </script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js">   </script>    
@@ -21,21 +22,25 @@
       <section ng-hide="!isUserLogedIn()">
         <div id="wrapper">
           <header>
-            <section id="title_section"> <h1> FurryCare </h1> </section>
+            <section id="title_section"> <h1> FurryCare </h1>
+              <section class="visible_in_desktop_only">
+                <h2>Care for your loved ones</h2>
+              </section>
+            </section>
               <nav id="main_nav">
                 <ul>
-                  <li ng-class="{'active': isThisPageActive('notification')}" data-ng-click="selectedPage('notification')"> 
+                  <li ng-class="{'active_main_nav': isThisPageActive('notification')}" data-ng-click="selectedPage('notification')">
                       <img src="images/noti_icon.png"> 
                   </li>
-                  <li ng-class="{'active': isThisPageActive('animal')}" data-ng-click="selectedPage('animal')"> 
-                      <img src="images/animals_icon.png"> 
+                  <li ng-class="{'active_main_nav': isThisPageActive('animal')}" data-ng-click="selectedPage('animal')">
+                      <img src="images/animals_icon.png">
                   </li>
                   <div class="clear"> </div>
                 </ul>
               </nav>
           </header>
           <main>
-            <section ng-hide="isThisPageActive('notification')">
+            <section ng-hide="isThisPageActive('notification')"  class="section_animal_nav">
               <nav id="animal_nav">
                 <ul> <!-- class="scrollyeah"> -->
                   <li ng-repeat="animal in user.animals" data-ng-click="checkSelectedAnimal(animal._id)" 

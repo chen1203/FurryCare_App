@@ -28,9 +28,46 @@
       <file leaf-file-name="furrycare.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8438" max-vertical-offset="12274">
-              <caret line="512" column="32" selection-start-line="512" selection-start-column="32" selection-end-line="512" selection-end-column="32" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="8313" max-vertical-offset="13039">
+              <caret line="489" column="6" selection-start-line="489" selection-start-column="6" selection-end-line="489" selection-end-column="6" />
+              <folding>
+                <marker date="1437261946392" expanded="true" signature="444:557" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="482:520" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="8029:8179" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="8053:8144" placeholder="{&quot;careType&quot;: ''...}" />
+                <marker date="1437261946392" expanded="true" signature="8345:8592" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="8324:8560" placeholder="{&quot;editname&quot;: false...}" />
+                <marker date="1437261946392" expanded="true" signature="8626:8708" placeholder="/*...*/" />
+                <marker date="1437261946392" expanded="true" signature="8681:9587" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="11322:12174" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="12209:12265" placeholder="/*...*/" />
+                <marker date="1437261946392" expanded="true" signature="12293:12758" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="12440:12724" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="12837:13668" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="12940:13117" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="20484:20505" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="20536:20557" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="20631:20650" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="21122:22679" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="22770:23062" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="22823:22855" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="22925:23056" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="23274:30739" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="23370:25007" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="23580:23689" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="23695:24977" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="25164:25392" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="25452:25494" placeholder="/*...*/" />
+                <marker date="1437261946392" expanded="true" signature="25536:26625" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="26032:26597" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="26695:26865" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="26990:27211" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="27001:27059" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="28190:30332" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="30421:30437" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="30522:30622" placeholder="{...}" />
+                <marker date="1437261946392" expanded="true" signature="30664:30731" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,18 +75,28 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.206897" vertical-offset="9457" max-vertical-offset="12002">
-              <caret line="544" column="41" selection-start-line="544" selection-start-column="41" selection-end-line="544" selection-end-column="41" />
+            <state vertical-scroll-proportion="-9.310345" vertical-offset="12701" max-vertical-offset="13090">
+              <caret line="763" column="1" selection-start-line="652" selection-start-column="4" selection-end-line="763" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="animal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="desk_style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="9663" max-vertical-offset="10081">
+              <caret line="587" column="0" selection-start-line="587" selection-start-column="0" selection-end-line="587" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="animal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/pages/animal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33147633" vertical-offset="3264" max-vertical-offset="5559">
-              <caret line="199" column="66" selection-start-line="199" selection-start-column="32" selection-end-line="199" selection-end-column="66" />
+            <state vertical-scroll-proportion="-13.730769" vertical-offset="3094" max-vertical-offset="5525">
+              <caret line="203" column="5" selection-start-line="203" selection-start-column="5" selection-end-line="203" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -58,8 +105,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="23.423077" vertical-offset="1017" max-vertical-offset="1547">
-              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state vertical-scroll-proportion="-10.461538" vertical-offset="306" max-vertical-offset="1632">
+              <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_animal.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/pages/new_animal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.53571427" vertical-offset="283" max-vertical-offset="765">
+              <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -68,15 +125,20 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/pages/new_animal.html" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/js/furrycare.js" />
         <option value="$PROJECT_DIR$/public/pages/animal.html" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/public/css/desk_style.css" />
+        <option value="$PROJECT_DIR$/public/pages/new_animal.html" />
       </list>
     </option>
   </component>
@@ -221,6 +283,14 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom\Documents\GitHub\FurryCare_App\public\css" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -237,15 +307,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -261,7 +331,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -271,9 +341,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24670571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11493412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2976378" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -309,9 +379,115 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12172">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8704" max-vertical-offset="12767">
+          <caret line="512" column="6" selection-start-line="512" selection-start-column="6" selection-end-line="512" selection-end-column="6" />
+          <folding>
+            <marker date="1437261946392" expanded="true" signature="444:557" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="482:520" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8029:8179" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8053:8144" placeholder="{&quot;careType&quot;: ''...}" />
+            <marker date="1437261946392" expanded="true" signature="8345:8592" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8324:8560" placeholder="{&quot;editname&quot;: false...}" />
+            <marker date="1437261946392" expanded="true" signature="8626:8708" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="8681:9587" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="11322:12174" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12209:12265" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="12293:12758" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12440:12724" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12837:13668" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12940:13117" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20484:20505" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20536:20557" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20631:20650" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="21122:22679" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22770:23062" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22823:22855" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22925:23056" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23274:30739" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23370:25007" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23580:23689" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23695:24977" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="25164:25392" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="25452:25494" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="25536:26625" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26032:26597" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26695:26865" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26990:27211" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="27001:27059" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="28190:30332" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30421:30437" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30522:30622" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30664:30731" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9248" max-vertical-offset="12444">
+          <caret line="544" column="21" selection-start-line="544" selection-start-column="21" selection-end-line="544" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/animal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5491">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1632">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12172">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1437261946392" expanded="true" signature="444:557" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="482:520" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8029:8179" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8053:8144" placeholder="{&quot;careType&quot;: ''...}" />
+            <marker date="1437261946392" expanded="true" signature="8345:8592" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8324:8560" placeholder="{&quot;editname&quot;: false...}" />
+            <marker date="1437261946392" expanded="true" signature="8626:8708" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="8681:9587" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="11322:12174" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12209:12265" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="12293:12758" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12440:12724" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12837:13668" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12940:13117" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20484:20505" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20536:20557" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20631:20650" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="21122:22679" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22770:23062" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22823:22855" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22925:23056" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23274:30739" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23370:25007" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23580:23689" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23695:24977" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="25164:25392" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="25452:25494" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="25536:26625" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26032:26597" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26695:26865" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26990:27211" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="27001:27059" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="28190:30332" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30421:30437" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30522:30622" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30664:30731" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -327,46 +503,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59799" vertical-offset="0" max-vertical-offset="680">
           <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pages/new_animal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5430108" vertical-offset="359" max-vertical-offset="782">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="34" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8438" max-vertical-offset="12274">
-          <caret line="512" column="32" selection-start-line="512" selection-start-column="32" selection-end-line="512" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="8313" max-vertical-offset="13039">
+          <caret line="489" column="6" selection-start-line="489" selection-start-column="6" selection-end-line="489" selection-end-column="6" />
+          <folding>
+            <marker date="1437261946392" expanded="true" signature="444:557" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="482:520" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8029:8179" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8053:8144" placeholder="{&quot;careType&quot;: ''...}" />
+            <marker date="1437261946392" expanded="true" signature="8345:8592" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="8324:8560" placeholder="{&quot;editname&quot;: false...}" />
+            <marker date="1437261946392" expanded="true" signature="8626:8708" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="8681:9587" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="11322:12174" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12209:12265" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="12293:12758" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12440:12724" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12837:13668" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="12940:13117" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20484:20505" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20536:20557" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="20631:20650" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="21122:22679" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22770:23062" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22823:22855" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="22925:23056" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23274:30739" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23370:25007" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23580:23689" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="23695:24977" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="25164:25392" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="25452:25494" placeholder="/*...*/" />
+            <marker date="1437261946392" expanded="true" signature="25536:26625" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26032:26597" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26695:26865" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="26990:27211" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="27001:27059" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="28190:30332" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30421:30437" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30522:30622" placeholder="{...}" />
+            <marker date="1437261946392" expanded="true" signature="30664:30731" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52040815" vertical-offset="510" max-vertical-offset="1632">
+          <caret line="42" column="90" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="90" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.206897" vertical-offset="9457" max-vertical-offset="12002">
-          <caret line="544" column="41" selection-start-line="544" selection-start-column="41" selection-end-line="544" selection-end-column="41" />
+        <state vertical-scroll-proportion="-9.310345" vertical-offset="12701" max-vertical-offset="13090">
+          <caret line="763" column="1" selection-start-line="652" selection-start-column="4" selection-end-line="763" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
+    <entry file="file://$PROJECT_DIR$/public/css/desk_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="23.423077" vertical-offset="1017" max-vertical-offset="1547">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="9663" max-vertical-offset="10081">
+          <caret line="587" column="0" selection-start-line="587" selection-start-column="0" selection-end-line="587" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/pages/animal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33147633" vertical-offset="3264" max-vertical-offset="5559">
-          <caret line="199" column="66" selection-start-line="199" selection-start-column="32" selection-end-line="199" selection-end-column="66" />
+        <state vertical-scroll-proportion="-13.730769" vertical-offset="3094" max-vertical-offset="5525">
+          <caret line="203" column="5" selection-start-line="203" selection-start-column="5" selection-end-line="203" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="306" max-vertical-offset="1632">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/new_animal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53571427" vertical-offset="283" max-vertical-offset="765">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding />
         </state>
       </provider>
