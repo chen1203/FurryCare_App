@@ -570,8 +570,6 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
       }
     };
 
-
-
 }]); 
 
 furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
@@ -596,9 +594,8 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
     $scope.createFoodNoti = function(notiName,notiReceivedDate,bagWeight,dailyUse) {
         console.log("create notification to food.");
         var daysleft = (bagWeight * 1000) / dailyUse;
-        var dateToExp = new Date();
+        var dateToExp = new Date(notiReceivedDate);
         dateToExp.setDate(dateToExp.getDate() + daysleft); 
-        console.log(dateToExp);
         // push the notification to db
         $http.get('https://furry-care-ws.herokuapp.com/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
             +'&notiType=food'+'&notiName='+notiName
@@ -654,10 +651,7 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
         dateToExp.setDate(dateToExp.getDate() + daysleft);  
         return dateToExp;
     };
-    $scope.calcTimeLeftForFood = function(food) {
-       /* var daysleft = (food.foodBagWeight * 1000) / food.foodDailyUsage;  
-        var dateToExp = new Date(food.foodDate);
-        dateToExp.setDate(dateToExp.getDate() + daysleft); */
+    $scope.calcTimeLeftForFood = function(food) {   
         return $scope.calcTimeLeftWithTwoDates(food.foodDate,$scope.calcExpireDateForFood(food)); 
     };
     $scope.calcTimeForNoti = function(notiReceivedDate,notiExpiredDate) {
