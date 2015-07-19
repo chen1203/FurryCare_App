@@ -785,8 +785,7 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
         });
         return found;
     };
-
-     $scope.getMessage1 = function(category) {
+    $scope.getMessage1 = function(category) {
         if (category == "vaccination")
             return "Vaccine about to expire!";
         if (category == "food")
@@ -801,7 +800,6 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
             return "It's time for a new one!";
         if (category == "care")
             return "It's time for an haircut!";    
-        
     };
 
 });
