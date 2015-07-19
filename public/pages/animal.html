@@ -56,18 +56,15 @@
 			    </li>
 			    <ng-switch on="vaccItemOpen()">
 			    	<section ng-switch-when="true">
-					    
-					    <section class="imp_detail_not_exist" ng-show="addVaccState() || findMostImportantItem('vacc')==0">
+					    <section class="imp_detail_not_exist" ng-show="addVaccState() || !findMostImportantItem('vacc')">
 					    	<img src="../images/vaccination.png">
 					    </section>
-
-					    <section class="most_imp_detail" ng-show="!addVaccState() && findMostImportantItem('vacc')==1">
+					    <section class="most_imp_detail" ng-show="!addVaccState() && findMostImportantItem('vacc')">
 					    	<img src="../images/vaccination.png">
 					    	<p> {{impVacc.vaccName}} </p>
 					    	<p> {{getMessage1('vaccination')}} </p>
 					    	<p> {{getMessage2('vaccination')}} </p>
 					    </section>
-
 					    <section class="sub_title_complex_details" ng-hide="addVaccState()">
 					    	<p> All </p>
 					    	<img src="../images/add_small.png" ng-click="addVaccClicked()">
@@ -78,8 +75,7 @@
 					    </section>
 					     <!-- new vaccination form will be displayed if the list is empty-->
 						<section ng-hide="!addVaccState()">
-							<form class="new_complex_details_form" ng-submit="createVacc();
-									createNoti('vaccination',vacc.vaccName,vacc.vaccDate,vacc.vaccExp)"> 
+							<form class="new_complex_details_form" ng-submit="createVacc()"> 
 								<section>
 									<img src="../images/num1.png">
 									<label> Name:  </label>
@@ -142,19 +138,15 @@
 			    </li>
 			    <ng-switch on="foodItemOpen()">
 			    	<section ng-switch-when="true">
-
-					     <section class="imp_detail_not_exist" ng-show="addFoodState() || findMostImportantItem('food')==0">
+					     <section class="imp_detail_not_exist" ng-show="addFoodState() || !findMostImportantItem('food')">
 					    	<img src="../images/food.png">
 					    </section>
-
-					    <section class="most_imp_detail" ng-show="!addFoodState() && findMostImportantItem('food')==1">
+					    <section class="most_imp_detail" ng-show="!addFoodState() && findMostImportantItem('food')">
 					    	<img src="../images/food.png">
 					    	<p> {{impFood.foodName}} </p>
 					    	<p> {{getMessage1('food')}} </p>
 					    	<p> {{getMessage2('food')}} </p>
 					    </section>
-
-
 					    <section class="sub_title_complex_details" ng-hide="addFoodState()">
 					    	<p> All </p>
 					    	<img src="../images/add_small.png" ng-click="addFoodClicked()">
@@ -165,8 +157,7 @@
 					    </section>	
 					     <!-- new food form will be displayed if the list is empty-->
 						<section ng-hide="!addFoodState()">
-							<form class="new_complex_details_form" ng-submit="createFood();
-							createFoodNoti(food.foodName,food.foodDate,food.foodBagWeight,food.foodDailyUsage)">
+							<form class="new_complex_details_form" ng-submit="createFood()">
 								<section>
 									<img src="../images/num1.png">
 									<label> Name:  </label>
@@ -255,18 +246,15 @@
 			    </li>
 			    <ng-switch on="careItemOpen()">
 			    	<section ng-switch-when="true">
-					
-					     <section class="imp_detail_not_exist" ng-show="addCareState() || findMostImportantItem('care')==0">
+					     <section class="imp_detail_not_exist" ng-show="addCareState() || !findMostImportantItem('care')">
 					    	<img src="../images/care.png">
 					    </section>
-
-					    <section class="most_imp_detail" ng-show="!addCareState() && findMostImportantItem('care')==1">
+					    <section class="most_imp_detail" ng-show="!addCareState() && findMostImportantItem('care')">
 					    	<img src="../images/care.png">
 					    	<p> {{impCare.careType}} </p>
 					    	<p> {{getMessage1('care')}} </p>
 					    	<p> {{getMessage2('care')}} </p>
 					    </section>
-
 					    <section class="sub_title_complex_details" ng-hide="addCareState()">
 					    	<p> All </p>
 					    	<img src="../images/add_small.png" ng-click="addCareClicked()">
@@ -277,8 +265,7 @@
 					    </section>
 					     <!-- new care form will be displayed if the list is empty-->
 						<section ng-hide="!addCareState()">
-							<form class="new_complex_details_form" ng-submit="createCare();
-							createNoti('care',care.careType,care.careDate,care.careExp)">
+							<form class="new_complex_details_form" ng-submit="createCare()">
 								<section>
 									<img src="../images/num1.png">
 									<label> Type:  </label>
