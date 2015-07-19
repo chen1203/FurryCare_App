@@ -25,7 +25,7 @@ a{
     clear: both;
 }
 
-@media (min-width: 551px) {
+@media (min-width: 600px) {
     .visible_in_desktop_only{
         visibility: visible;
     }
@@ -112,7 +112,7 @@ a{
         cursor: pointer;
     }
     #add_animal {
-        width: 12%;
+        width: 11.9%;
         height: 89px;
         float: left;
         border-top: 1px solid #747272;
@@ -127,8 +127,9 @@ a{
     #add_animal>section>img {
         width: 57px;
         height: 57px;
-        margin-top: 9px;
-        margin-left: 20px;
+        display: block;
+        margin: auto;
+        padding-top: 9px;
         cursor: pointer;
     }
 
