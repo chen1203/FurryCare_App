@@ -23,7 +23,9 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
                                                     function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {   
 
     $scope.page = 'notification';
-
+    $("#login_btn_section").click(function () {
+        $("#login_btn").trigger('click');
+    });
     $scope.isUserLogedIn = function() {
         //console.log("on logedIn...");
         if (typeof $cookies.userMail !== 'undefined') 
@@ -542,7 +544,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         var fd = new FormData();
         //Take the first selected file
         fd.append("file", files[0]);
-        $http.post('https://furry-care-ws.herokuapp.com/uploadImg', fd, {
+        $http.post('https://furrycare-ws.herokuapp.com/uploadImg', fd, {
             withCredentials: true,
             headers: {'Content-Type': undefined},
             transformRequest: angular.identity

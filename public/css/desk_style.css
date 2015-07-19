@@ -776,6 +776,7 @@ a{
         /************************** LOGIN PAGE **************************/
         .login_bg {
             background-color: #f05d58;
+            min-height: 913px;
         }
         #loginIcon{
             width: 100%;
@@ -802,11 +803,23 @@ a{
         #loginButton{
             display:none;
         }
-        #login_btn {
-            margin: 28px 0px 336px 0px;
-            width: 466px;
-            height: 64px;
-        }
+    #login_btn{
+        display:none;
+    }
+    #login_btn_section {
+        margin:0 auto;
+        margin-top: 28px;
+        width: 466px;
+        height: 64px;
+        background-color: #6c6d70;
+        font-family: gil, arial, sans-serif;
+        color: #ffffff;
+        font-size: 23px;
+        cursor: pointer;
+    }
+    #login_btn_section>p{
+        padding-top: 24px;
+    }
         /* end login page */
 
     }
