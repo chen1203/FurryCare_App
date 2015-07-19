@@ -92,7 +92,7 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
                         $scope.user = data;
                         $scope.updateCurrentAnimal("first");
                         $scope.newAnimalClicked = false;
-                        $location.path("/animal");
+                        $location.path("/notification");
                     } else {
                          alert("incorrect password.");
                          //clear input
