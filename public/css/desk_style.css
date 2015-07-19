@@ -1,4 +1,4 @@
-/************************** LOGIN PAGE **************************/
+
 * {
     margin:0;
     padding:0;
@@ -771,6 +771,42 @@ a{
         cursor: pointer;
     }
 
-}
+        /************************** LOGIN PAGE **************************/
+        .login_bg {
+            background-color: #f05d58;
+        }
+        #loginIcon{
+            width: 100%;
+            padding: 173px 0 147px 0;
+            text-align: center;
+        }
+        #loginIcon>img {
+            width: 181px;
+            height: 181px;
+        }
+        #loginForm{
+            text-align: center;
+        }
+        .textInput{
+            width: 434px;
+            height: 78px;
+            padding-left: 32px;
+            margin-bottom: 26px;
+            font-size: 24px;
+            font-family: gil,Verdana, sans-serif;
+            outline: 0px;
+            border: none;
+        }
+        #loginButton{
+            display:none;
+        }
+        #login_btn {
+            margin: 28px 0px 336px 0px;
+            width: 466px;
+            height: 64px;
+        }
+        /* end login page */
+
+    }
 
 
