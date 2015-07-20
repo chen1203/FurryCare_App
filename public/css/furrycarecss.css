@@ -619,7 +619,6 @@ input[type=number]::-webkit-outer-spin-button {
 .noti_title {
     height: 68px;
     border-bottom: 1px solid #221f1f;
-    margin-left: 12px;
     position: relative;
 }
 .noti_title>section {
@@ -773,7 +772,8 @@ input[type=number]::-webkit-outer-spin-button {
     }
     #add_animal > section > img {
         display: block;
-        margin: auto;
+        margin: 0 auto;
+        padding-top: 9px;
         cursor: pointer;
     }
     .section_animal_nav {
@@ -887,6 +887,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .noti_title {
         width: 90%;
+        margin: 0 auto;
     }
     .noti_body > section:nth-child(1) > img {
         margin-left: 50px;
@@ -1058,6 +1059,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .noti_title {
         width: 564px;
+        margin-left: 12px;
     }
     .noti_body {
         border-bottom: 1px solid #221f1f;
