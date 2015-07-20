@@ -26,7 +26,7 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
     });
     $scope.page = 'notification';       // define the "index" page - first show to the user when login
     $scope.isUserLogedIn = function() {
-        if (typeof $cookies.userMail !== 'undefined') 
+        if (typeof $cookies.userMail !== 'undefined')
             return true;
         return false;
     };
@@ -64,7 +64,6 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
     $scope.tries = 0; // number of login attempt - max is 3
     $scope.login = function() {    
         console.log("try to login with mail: "+ $scope.user.email+"\npassword: "+$scope.user.pass+"\ntry number: "+$scope.tries);
-
         $http.get('https://furrycare-ws.herokuapp.com/getUser?userMail='+$scope.user.email)
             .success(function (data){
                 if (data == null) {
@@ -217,7 +216,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             return;
         }
     };
-
+    // if the animal detail (age,weight,name) is in edit mode
     $scope.isInEditMode = function(detail) {
         if (detail === "animalName")
             return $scope.$parent.currAnimal.editname;
@@ -252,7 +251,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         } else 
                 console.log("nothing changed - there no need to update the db.");
     };
-    // add animal button was clicked
+    // add animal button was clicked - call the service
     $scope.addNewAnimal = function(){
         $scope.$parent.newAnimalClicked = false;
         console.log("New animal was added - name: "+ $scope.animal.animalName+"\nage: "+$scope.animal.animalAge+"\nweight: "
@@ -775,11 +774,9 @@ furrycareApp.controller('doneCtrl', function () {
         $("#done_new_vacc").click(function () {
             $("#submit_new_vacc").trigger('click');
         });
-        
         $("#done_new_food").click(function () {
             $("#submit_new_food").trigger('click');
         });
-        
         $("#done_new_care").click(function () {
             $("#submit_new_care").trigger('click');
         });
