@@ -52,10 +52,6 @@ a{
 }
 
 /************************** LOGIN PAGE **************************/
-.login_bg {
-    background-color: #f05d58;
-    min-height: 913px;
-}
 #loginIcon{
     width: 100%;
     padding: 173px 0 147px 0;
@@ -599,6 +595,14 @@ input[type=number]::-webkit-outer-spin-button {
     color:#f05d58;
     text-align: center;
 }
+#default_circle {
+    margin: 0 auto;
+    margin-top: 16px;
+    border-radius:99px;
+    background-color: #e7676d;
+    width: 60px;
+    height: 60px;
+}
 /******************** NOTIFICARION PAGE *********************/
 #noti_page {
     background-color: #d1d2d3;
@@ -710,6 +714,10 @@ input[type=number]::-webkit-outer-spin-button {
 @media (min-width: 600px) {
     .visible_in_desktop_only {
         visibility: visible;
+    }
+    .login_bg {
+        background-color: #f05d58;
+        min-height: 900px;
     }
 
     /************************** INDEX PAGE **************************/
@@ -904,7 +912,10 @@ input[type=number]::-webkit-outer-spin-button {
         width: 640px;
         margin:0 auto;
     }
-
+    .login_bg {
+        background-color: #f05d58;
+        min-height: 1136px;
+    }
     /************************** INDEX PAGE **************************/
     #title_section{
         height: 114px;
