@@ -28,8 +28,18 @@
       <file leaf-file-name="furrycare.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="22.814236" vertical-offset="0" max-vertical-offset="13481">
-              <caret line="773" column="69" selection-start-line="773" selection-start-column="69" selection-end-line="773" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.5572917" vertical-offset="12871" max-vertical-offset="13447">
+              <caret line="776" column="11" selection-start-line="776" selection-start-column="11" selection-end-line="776" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1683">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -48,9 +58,9 @@
       <list>
         <option value="$PROJECT_DIR$/public/pages/new_animal.html" />
         <option value="$PROJECT_DIR$/public/pages/animal.html" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/css/desk_style.css" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/furrycare.js" />
       </list>
     </option>
@@ -498,14 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27966103" vertical-offset="1346" max-vertical-offset="1700">
-          <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/pages/notification.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
@@ -530,10 +532,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1683">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/furrycare.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="22.814236" vertical-offset="0" max-vertical-offset="13481">
-          <caret line="773" column="69" selection-start-line="773" selection-start-column="69" selection-end-line="773" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.5572917" vertical-offset="12871" max-vertical-offset="13447">
+          <caret line="776" column="11" selection-start-line="776" selection-start-column="11" selection-end-line="776" selection-end-column="11" />
           <folding />
         </state>
       </provider>
