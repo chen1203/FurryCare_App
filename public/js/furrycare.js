@@ -1,6 +1,6 @@
 var furrycareApp = angular.module("furrycareApp",['ngCookies','ngRoute','ngAnimate','puElasticInput']);
 
-furrycareApp.config(function($routeProvider){
+furrycareApp.config(function($routeProvider){       // config application routes
       $routeProvider
           .when('/animal',{
                 templateUrl: 'pages/animal.html',
@@ -14,20 +14,18 @@ furrycareApp.config(function($routeProvider){
                 templateUrl: 'pages/new_animal.html',
                 controller: 'animalCtrl'
           });
-         /* .otherwise({
-                redirectTo : 'pages/home'
-          });*/          
 });
-
+/******************************
+ * ----USER CONTROLLER----
+ ******************************/
 furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$cookieStore','$window','$location',
-                                                    function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {   
+                                                    function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {
 
-    $scope.page = 'notification';
-    $("#login_btn_section").click(function () {
+    $("#login_btn_section").click(function () {     // login page - define trigger and on click to "Log In" button
         $("#login_btn").trigger('click');
     });
+    $scope.page = 'notification';       // define the "index" page - first show to the user when login
     $scope.isUserLogedIn = function() {
-        //console.log("on logedIn...");
         if (typeof $cookies.userMail !== 'undefined') 
             return true;
         return false;
@@ -50,61 +48,44 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
         if (first_or_last === "first") // len > 1
             $scope.currAnimal = $scope.user.animals[0];
         else {
-            console.log("on updateCurrentAnimal else... len is : "+len);
             $scope.currAnimal = $scope.user.animals[len-1];
         }
         $scope.resetEditFields();
-        console.log("curr animal name: "+$scope.currAnimal.animalName);
     };
     $scope.getUser = function() {
-        console.log("getUser is called!!! so the user is updated!");
+        // get user by email from the DB
         $http.get('https://furrycare-ws.herokuapp.com/getUser?userMail='+$cookies.userMail).success(function (data) {
             console.log(data);
             $scope.user = data;
-            console.log("user name : "+$scope.user.userName);
-           // if ( typeof $scope.user.animals !== 'undefined') {
                 $scope.updateCurrentAnimal("first");        
 
         });
     };
-    $scope.tries = 0; // need enter to func login()
+    $scope.tries = 0; // number of login attempt - max is 3
     $scope.login = function() {    
-        console.log("mail: "+ $scope.user.email);
-        console.log("pass: "+ $scope.user.pass);
-        console.log("try number: "+$scope.tries);       
+        console.log("try to login with mail: "+ $scope.user.email+"\npassword: "+$scope.user.pass+"\ntry number: "+$scope.tries);
 
         $http.get('https://furrycare-ws.herokuapp.com/getUser?userMail='+$scope.user.email)
             .success(function (data){
-                console.log("login...");
-                console.log("data(user) returned from ws ");  
-                console.log(data);
-                
                 if (data == null) {
-                    alert("There is no such email in the system. move to sign in.");
-                    // delete history
-                    $location.path("/error"); // sign in ?
+                    alert("There is no such email in the system.");
+                    $location.path("/error");
                 } else {
                     console.log(data.email);
                     console.log(data.pass);
                     console.log($scope.user.pass);
                     if (data.pass === $scope.user.pass)  {
-                        // delete history                     
-                        $cookies.userMail = data.email;
-                        console.log("FROM LOGIN- COOKIE : "+$cookies.userMail);
-                        // need it ?
+                        $cookies.userMail = data.email;     //create cookie with mail address
                         $scope.user = data;
                         $scope.updateCurrentAnimal("first");
                         $scope.newAnimalClicked = false;
                         $location.path("/notification");
                     } else {
                          alert("incorrect password.");
-                         //clear input
-                         $scope.user.pass = "";
-                         // increament number of tries
-                         $scope.tries +=1;
+                         $scope.user.pass = "";      //clear input
+                         $scope.tries +=1;  // increment number of tries
                          if ($scope.tries >= 3) {
-                            alert("You have been tring too many times.\nYou can try login again later..");
-                            // delete history
+                            alert("You have been trying too many times.\nYou can try login again later.");
                             $location.path("/error");
                          }
                      }
@@ -112,25 +93,20 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
         });
     };
     $scope.initUserCtrl = function() {
-        console.log("init user Ctrl..........................................");
         if ($scope.isUserLogedIn()) {
             $scope.getUser(); 
             $scope.newAnimalClicked = false;
             $location.path("/notification");
         }
-        /* else
-            $scope.login(); */
     };
-
     $scope.initUserCtrl();
-    
     $scope.isThisPageActive = function (pageName) {
         return $scope.page === pageName;
     };
     $scope.editWithoutDoneFixed = function() {
     /* the situation is that edit button pressed and maybe the field was changed,
         but the 'done' button wasn't pressed, so the change won't save to db.
-        We want to return the previos name without refreshing the page so we do that. 
+        We want to return the previous name without refreshing the page so we do that.
     */
         if ($scope.currAnimal.editname == true)
             $scope.currAnimal.animalName = $scope.currAnimal.pre_name;  
@@ -141,20 +117,18 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
     };
     $scope.selectedPage = function (pageName) {
         $scope.page = pageName;
-        // if we are in noti page, and someone change the db from mongo directly.
+        // if we are in notification page, and someone change the db from mongo directly.
         // we will come back to animal page and the data won't be updated.
         // if we want he will be update we need to call : getUser (include inside the update)
         // if not, just updateCurrentAnimal
-        
-        //$scope.updateCurrentAnimal("first");
+        $scope.user = $scope.getUser();
 
-        $scope.user = $scope.getUser(); /// !!!! NEED TO THINK OF THAT
         $scope.newAnimalClicked = false;
         $location.path("/"+$scope.page);
     };
     $scope.checkSelectedAnimal = function(id) {
-        //console.log("id= "+id);
-        if (!$scope.newAnimalClicked) { // if we are not in new_animal page
+        // if we are not in new_animal page
+        if (!$scope.newAnimalClicked) {
             angular.forEach($scope.user.animals, function(animal) {
                 if (animal._id == id) {
                     $scope.editWithoutDoneFixed();
@@ -170,13 +144,15 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
         return $scope.currAnimal._id === nowSelectedAnimalLink;
     };
     $scope.moveToAddNewAnimalPage = function() {
-        console.log("moveToAddNewAnimalPage");
         $scope.newAnimalClicked = true;
         $location.path("/new_animal");
     };
 
 }]);
 
+/******************************
+ * ----ANIMAL CONTROLLER----
+ ******************************/
 furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies','$cookieStore','$window','$location',
                                                     function ($scope,$rootScope,$http,$cookies,$cookieStore,$window,$location) {                      
 
@@ -207,12 +183,12 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             careItemClickedVar : false
         };
     };
-    
+   // reset all complex details objects fields
     $scope.resetFoodNewObj();
     $scope.resetVaccNewObj();
     $scope.resetCareNewObj();
 
-    // this just for the first time..
+    // reset the current animal fields - just for the first time.
     if (typeof $scope.$parent.currAnimal === 'undefined') {
         $scope.$parent.currAnimal = {
             editname : false,
@@ -223,15 +199,11 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             careOpened : undefined
         };
     }
-    /* edit button of simple detail of current animal was clicked : name/age/weight */
+    // edit button of simple detail of current animal was clicked : name/age/weight
     $scope.editDetailClicked = function(detail) {
-        console.log(detail);
-
         if (detail === "animalName") {
-            //console.log("curr animal name: "+$scope.currAnimal.animalName);
             $scope.$parent.currAnimal.pre_name = $scope.$parent.currAnimal.animalName;
             $scope.$parent.currAnimal.editname = true;
-            console.log($scope.$parent.currAnimal.editname);
             return;
         }
         if (detail === "animalAge") {
@@ -254,7 +226,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         if (detail === "animalWeight")
             return $scope.$parent.currAnimal.editweight;
     };
-    /* done editing button of simple detail of current animal was clicked : name/age/weight */
+    // done editing button of simple detail of current animal was clicked : name/age/weight
     $scope.doneEditClicked = function(detail) {
         var val,pre_val;
         if (detail === "animalName") {
@@ -272,52 +244,41 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             pre_val = $scope.$parent.currAnimal.pre_weight;
         }
         if (val !== pre_val) {
-            console.log("doneEditClicked....");
             $http.get('https://furrycare-ws.herokuapp.com/setAnimalField?field='+detail+'&animalId='+$scope.$parent.currAnimal._id+
                     '&animalNewVal='+val)
                     .success(function (data){
                         $scope.$parent.user = data;
                 });
         } else 
-                console.log("no need to update in db.");
+                console.log("nothing changed - there no need to update the db.");
     };
-    /* add animal button was clicked */
-    //$scope.addNewAnimal = function() {
-
+    // add animal button was clicked
     $scope.addNewAnimal = function(){
         $scope.$parent.newAnimalClicked = false;
-        console.log("name: "+ $scope.animal.animalName);
-        console.log("age: "+ $scope.animal.animalAge);
-        console.log("weight: "+ $scope.animal.animalWeight);
-        $scope.animal.animalPic = "images/default_pic_animal.png";
-        console.log("pic: "+ $scope.animal.animalPic);
-
-        if( profileImageUrl != null)
+        console.log("New animal was added - name: "+ $scope.animal.animalName+"\nage: "+$scope.animal.animalAge+"\nweight: "
+        +$scope.animal.animalWeight);
+        $scope.animal.animalPic = "images/default_pic_animal.png";      // define default profile picture
+        if( profileImageUrl != null) {
+            // user uploaded profile picture successfully
             $scope.animal.animalPic = profileImageUrl;
-        
-        console.log("pic: "+ $scope.animal.animalPic); // pic url;
-
+        }
+            console.log("Profile picture URL: "+ $scope.animal.animalPic);      // show the final picture url- from user/default
 
         $http.get('https://furrycare-ws.herokuapp.com/setNewAnimal?animalName='+$scope.animal.animalName+'&animalAge='+$scope.animal.animalAge
             +'&animalWeight='+$scope.animal.animalWeight+'&animalPic='+$scope.animal.animalPic)
             .success(function (data){
-                console.log("set new animal successfully...");
-                console.log(data); 
-                // update user with the new animal
-                $scope.$parent.user = data;
+                console.log("set new animal successfully to DB");
+                $scope.$parent.user = data;     // update user with the new animal
                 $scope.$parent.updateCurrentAnimal("last"); 
                 $location.path("/animal");
         });
     };
-    /* delete the current animal from animals of the user */
+    // delete the current animal from animals of the user
     $scope.deleteAnimal = function() {
-        console.log("delete animal name :"+$scope.$parent.currAnimal.animalName);
+        console.log("Delete animal - name :"+$scope.$parent.currAnimal.animalName);
         $http.get('https://furrycare-ws.herokuapp.com/deleteAnimal?animalId='+$scope.$parent.currAnimal._id)
             .success(function (data){
                 $scope.$parent.user = data;
-                console.log("return from delete server....");
-                console.log(data);
-                console.log($scope.$parent.currAnimal.animalName);
                 // update new current animal because last current animal was deleted.
                 $scope.$parent.updateCurrentAnimal("first");
         });
@@ -390,17 +351,17 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     };
     $scope.addVaccClicked = function() {
         $scope.addVaccClickedVar = true;
-    }
+    };
     $scope.addFoodClicked = function() {
         $scope.addFoodClickedVar = true;
-    }
+    };
     $scope.addCareClicked = function() {
         $scope.addCareClickedVar = true;
-    }
+    };
     $scope.addVaccState = function() {
         /* the form for a new vaccination will be shown in two cases:
             1. The list is empty.
-            2. The add vacc button was clicked.
+            2. The add vaccination button was clicked.
          */
         if ($scope.$parent.currAnimal.animalVaccination.length == 0 || $scope.addVaccClickedVar) 
             return true;
@@ -476,19 +437,19 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             vacc.vaccItemClickedVar = false;
         else 
             vacc.vaccItemClickedVar = true;
-    }
+    };
     $scope.foodItemClicked = function(food) {
         if (food.foodItemClickedVar == true)
             food.foodItemClickedVar = false;
         else 
             food.foodItemClickedVar = true;
-    }
+    };
     $scope.careItemClicked = function(care) {
         if (care.careItemClickedVar == true)
             care.careItemClickedVar = false;
         else 
             care.careItemClickedVar = true;
-    }
+    };
     $scope.openList = function(typeList) {
         if (typeList == "vacc")
             $scope.openVaccList("open");
@@ -499,7 +460,6 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
     };
     $scope.deleteItemComplexDetail = function(typeComplexDetail,itemId) {
         var animalId = $scope.$parent.currAnimal._id; 
-        console.log("delete item clicked");
         $http.get('https://furrycare-ws.herokuapp.com/deleteItemComplexDetail?animalId='+animalId
             +'&typeComplexDetail='+typeComplexDetail+'&itemId='+itemId)
             .success(function (data){
@@ -510,25 +470,20 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
                 $scope.openList(typeComplexDetail);
         });
     };
-
-
-
-    var uploadAnimalPictureBool = 1;
-    var profileImageUrl = null;
-
-
+    //update the chosen profile picture in new animal page
     $("#imgInp").change(function(){
         readURL(this);
     });
-
+    // define onclick and trigger to profile image and Done buttons
     $("#profileImage").click(function () {
         $("#imgInp").trigger('click');
     });
     $("#done_new_animal").click(function () {
         $("#submit_new_animal").trigger('click');
     });
-    
-
+    var uploadAnimalPictureBool = 1;    // user cannot continue until the uploading process is done
+    var profileImageUrl = null;
+    //update the chosen profile picture in new animal page
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -539,7 +494,8 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             reader.readAsDataURL(input.files[0]);
         }
     }
-
+    //send the current location to the application service
+    // the service uploading the picture, return- claudinary URL
     $scope.uploadFile = function(files) {
         uploadAnimalPictureBool = 0; // block the user from submit
         var fd = new FormData();
@@ -552,30 +508,22 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
             console.log("File Upload Succcess!!");
             uploadAnimalPictureBool = 1; // return the submit option
             console.log("this is image url:" + data);
-            // add an extra to the url
-            // this extra made the image size 50*50 and circle it
-            ///c_scale,h_50,r_30,w_50
+            // add an extra path to the claudinary URL, the extra path is claudinary settings for circle image and sizes
             var tempImageUrl = data;
             profileImageUrl = tempImageUrl.slice(0,48) + "/c_scale,h_60,r_30,w_60" + tempImageUrl.slice(48 + Math.abs(0));
             // change the image type to png (remove the image white background that create from circle the image)
             var urlLength = profileImageUrl.length;
             tempImageUrl = profileImageUrl;
-            console.log("pro[]: "+profileImageUrl[urlLength-4]);
             if(profileImageUrl[urlLength-4]=="."){
-                console.log("i am dot!");
                 profileImageUrl = tempImageUrl.slice(0,urlLength-4) + ".png";
             } else if(profileImageUrl[urlLength-5]=="."){
                 profileImageUrl = tempImageUrl.slice(0,urlLength-5) + ".png";
             }
-
-            console.log("fixed url:" +profileImageUrl);
-
-        })
-            .error(function (err) {
+            console.log("Final claudinary URL that will be stored in DB\n:" +profileImageUrl);
+        }).error(function (err) {
                 console.log("File Upload Error!!");
-            });
+        });
     };
-
     $scope.checkIfAddAnimalAvailable = function(){
         // check if there is upload request - user cannot submit
       if (uploadAnimalPictureBool){
@@ -583,13 +531,14 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
           $scope.addNewAnimal();
       }
         else{
-          console.log("Please Wait for finish uploading the image");
-          // need to implement some alert?
+          alert("Please Wait for finish uploading the image");
       }
     };
 
-}]); 
-
+}]);
+/**********************************
+ * ----NOTIFICATION CONTROLLER----
+ **********************************/
 furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
 
     $scope.$on('createVaccNotiBroadcast', function(event, data) { 
@@ -604,14 +553,10 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
         var food = data.food;
         $scope.createFoodNoti(food._id,food.foodName,food.foodDate,food.foodBagWeight,food.foodDailyUsage);
     });
-    
     $scope.createNoti = function(notiType,objId,notiName,notiReceivedDate,notiExpiredDate) {
-        console.log("create notification to :"+notiType);
-        console.log(notiName);
         // checking if notification is needed
         if ($scope.calcTimeLeftWithTwoDates(notiReceivedDate,notiExpiredDate) == "") {
-            console.log("two entered dates is passed.")
-            // do something ?
+            alert("two entered dates are passed.");
         } else {
             // push the notification to db
             $http.get('https://furrycare-ws.herokuapp.com/addNewNoti?animalId='+$scope.$parent.$parent.currAnimal._id
@@ -623,7 +568,6 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
         }
     };
     $scope.createFoodNoti = function(foodId,notiName,notiReceivedDate,bagWeight,dailyUse) {
-        console.log("create notification to food.");
         var daysleft = (bagWeight * 1000) / dailyUse;
         var dateToExp = new Date(notiReceivedDate);
         dateToExp.setDate(dateToExp.getDate() + daysleft); 
@@ -636,21 +580,21 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
         });
     };
     $scope.calcReturnTimeFromOneDate = function(date,currentDate) {
-                var timeToReturn;
-                timeToReturn = date.getFullYear() - currentDate.getFullYear();
-                if (timeToReturn == 1)
-                    return timeToReturn+" year"; // 1 year
-                if (timeToReturn > 1)
-                    return timeToReturn+" years";
-                timeToReturn = (date.getMonth()+1) - (currentDate.getMonth()+1);
-                if (timeToReturn == 1)
-                    return timeToReturn+" month"; // 1 month
-                if (timeToReturn > 1)
-                    return timeToReturn+" months";
-                timeToReturn = date.getDate() - currentDate.getDate();
-                if (timeToReturn == 1)
-                    return timeToReturn+" day"; // 1 day
-                return timeToReturn+" days";
+        var timeToReturn;
+        timeToReturn = date.getFullYear() - currentDate.getFullYear();
+        if (timeToReturn == 1)
+            return timeToReturn+" year"; // 1 year
+        if (timeToReturn > 1)
+            return timeToReturn+" years";
+        timeToReturn = (date.getMonth()+1) - (currentDate.getMonth()+1);
+        if (timeToReturn == 1)
+            return timeToReturn+" month"; // 1 month
+        if (timeToReturn > 1)
+            return timeToReturn+" months";
+        timeToReturn = date.getDate() - currentDate.getDate();
+        if (timeToReturn == 1)
+            return timeToReturn+" day"; // 1 day
+        return timeToReturn+" days";
     };
     /* calculate time left for care or vacc */
     $scope.calcTimeLeftWithTwoDates = function (date,expDate) {
@@ -706,8 +650,6 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
         return imgFound;
     };
     $scope.deleteNoti = function(notiId) {
-        console.log("delete noti from app");
-        console.log("noti id: "+notiId);
         $http.get('https://furrycare-ws.herokuapp.com/deleteNotiById?notiId='+notiId)
             .success(function (data){
                 $scope.$parent.user = data;
@@ -722,7 +664,7 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
         if (diff1 > 0)
             return startDate;
         return new Date(exp);
-    }
+    };
     $scope.vaccOrder = function(vacc) {
         return $scope.closestDate(vacc.vaccDate,vacc.vaccExp);
     };
@@ -782,13 +724,10 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
     $scope.saveImpObjOnScope = function(category,obj) {
         if (category == "vacc") {
             $scope.impVacc = obj;
-            //console.log("imp vacc name: "+$scope.impVacc.vaccName);
         } else if (category == "food") {
             $scope.impFood = obj;
-            //console.log("imp food name: "+$scope.impFood.foodName);
         } else if (category == "care") {
             $scope.impCare = obj;
-            //console.log("imp care type: "+$scope.impCare.careType);
         }
     };
     $scope.findMostImportantItem = function(category) {
@@ -828,9 +767,11 @@ furrycareApp.controller('notificationCtrl', function ($scope,$http,$filter) {
     };
 
 });
-
+/******************************
+ * ----ANIMAL CONTROLLER----
+ ******************************/
 furrycareApp.controller('doneCtrl', function () {
-
+        // define trigger and on click to complex details Done button
         $("#done_new_vacc").click(function () {
             $("#submit_new_vacc").trigger('click');
         });

@@ -709,6 +709,9 @@ a{
         left: 7px;
     }
     .noti_title>section:nth-child(1)>img {
+        border: 1px solid #000000;
+        border-radius: 100%;
+        padding: 1px;
         width: 44px;
         height: 44px;
     }
