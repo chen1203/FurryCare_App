@@ -62,8 +62,8 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
             console.log(data);
             $scope.user = data;
             console.log("user name : "+$scope.user.userName);
-            //if ( typeof $scope.user.animals !== 'undefined') {
-            $scope.updateCurrentAnimal("first");        
+           // if ( typeof $scope.user.animals !== 'undefined') {
+                $scope.updateCurrentAnimal("first");        
 
         });
     };
@@ -145,9 +145,10 @@ furrycareApp.controller('userCtrl', ['$scope','$rootScope','$http','$cookies','$
         // we will come back to animal page and the data won't be updated.
         // if we want he will be update we need to call : getUser (include inside the update)
         // if not, just updateCurrentAnimal
-        $scope.updateCurrentAnimal("first");
+        
+        //$scope.updateCurrentAnimal("first");
 
-        //$scope.user = $scope.getUser(); /// !!!! NEED TO THINK OF THAT
+        $scope.user = $scope.getUser(); /// !!!! NEED TO THINK OF THAT
         $scope.newAnimalClicked = false;
         $location.path("/"+$scope.page);
     };
@@ -288,7 +289,7 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         console.log("name: "+ $scope.animal.animalName);
         console.log("age: "+ $scope.animal.animalAge);
         console.log("weight: "+ $scope.animal.animalWeight);
-        $scope.animal.animalPic = "images/animal1.png";
+        $scope.animal.animalPic = "images/default_pic_animal.png";
         console.log("pic: "+ $scope.animal.animalPic);
 
         if( profileImageUrl != null)
@@ -545,7 +546,6 @@ furrycareApp.controller('animalCtrl', ['$scope','$rootScope','$http','$cookies',
         //Take the first selected file
         fd.append("file", files[0]);
         $http.post('https://furrycare-ws.herokuapp.com/uploadImg', fd, {
-            withCredentials: true,
             headers: {'Content-Type': undefined},
             transformRequest: angular.identity
         }).success(function (data) {

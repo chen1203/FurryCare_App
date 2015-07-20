@@ -45,7 +45,7 @@
           <main>
             <section ng-hide="isThisPageActive('notification')"  class="section_animal_nav">
               <nav id="animal_nav">
-                <ul> <!-- class="scrollyeah"> -->
+                <ul class="scrollyeah">
                   <li ng-repeat="animal in user.animals" data-ng-click="checkSelectedAnimal(animal._id)" 
                       ng-class="{'active' : isThisAnimalActive(animal._id) }"> <!-- ,'item':true -->
                       <section class="nav_img"> <img ng-src="{{animal.animalPic}}"> </section>
