@@ -3,14 +3,16 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width">
+      <!-- ***** css style pages ******-->
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/desk_style.css">
       <link rel="shortcut icon" href="http://shenkar.html5-book.co.il/2014-2015/ws/dev_25/images/animals_icon.ico">
+      <!-- ***** scripts pages ******-->
       <script src="js/lib/Jquery/jquery-1.11.3.min.js"> </script>
       <script src="js/lib/angular/angular.min.js"> </script>
       <script src="js/lib/angular/angular-animate.min.js"> </script>
       <script src="js/lib/angular/angular-elastic-input.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js">   </script>    
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
       <script src="js/lib/angular/angular-cookies.js"> </script> 
       <script src='js/lib/Cloudinary/jquery.ui.widget.js' type='text/javascript'></script>
       <script src='js/lib/Cloudinary/jquery.iframe-transport.js' type='text/javascript'></script>
@@ -19,7 +21,6 @@
       <script src="js/furrycare.js"> </script>
       <title> Furry Care </title>
     </head>
-
     <body ng-app="furrycareApp" ng-controller="userCtrl">
       <section ng-hide="!isUserLogedIn()">
         <div id="wrapper">
@@ -46,7 +47,7 @@
               <nav id="animal_nav">
                 <ul class="scrollyeah">
                   <li ng-repeat="animal in user.animals" data-ng-click="checkSelectedAnimal(animal._id)" 
-                      ng-class="{'active' : isThisAnimalActive(animal._id) }"> <!-- ,'item':true -->
+                      ng-class="{'active' : isThisAnimalActive(animal._id) }">
                       <section class="nav_img"> <img ng-src="{{animal.animalPic}}"> </section>
                   </li>                  
                   <li ng-hide="!newAnimalClicked" ng-class="{'active' : newAnimalClicked}"> 
@@ -67,7 +68,6 @@
           </main>
         </div>
       </section>
-
       <!-- login page -->
       <section id="login_page" ng-hide="isUserLogedIn()">
         <div id="wrapper" class="login_bg">
@@ -84,7 +84,9 @@
               </p>
               <p>
                 <input id="login_btn" type="submit" src="images/login_btn.png" alt="submit_login">
-                <section id="login_btn_section"><p>Log In</p></section>
+                <section id="login_btn_section">
+                  <p>Log In</p>
+                </section>
               </p>
             </form>
           </main>

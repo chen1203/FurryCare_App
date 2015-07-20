@@ -498,6 +498,7 @@ a{
 	}
 	.new_complex_details_form>section>input[type='date']{
 		margin-top: 26px;
+		margin-left: 10px;
 	}
 	.new_complex_details_form>section>input[type='text'], .new_complex_details_form>section>input[type='number'] {
 		margin-left: 8px;
